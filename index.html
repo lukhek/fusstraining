@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FußKraft — Dein Onlinekurs für starke Füße</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            sand:  { DEFAULT: '#E8DDD0', light: '#F5F0EA', dark: '#C8B8A2' },
+            earth: { DEFAULT: '#5C4A36', light: '#7A6248', dark: '#3D2F1F' },
+            moss:  { DEFAULT: '#4A5E4A', light: '#637A63', dark: '#2F3D2F' },
+            cream: '#FAF7F2',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s ease forwards',
+            'fade-in': 'fadeIn 0.9s ease forwards',
+          },
+          keyframes: {
+            fadeUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background-color: #FAF7F2; color: #3D2F1F; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    .hero-bg {
+      background-color: #2F3D2F;
+      background-image:
+        radial-gradient(ellipse at 70% 20%, rgba(90,110,70,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(92,74,54,0.3) 0%, transparent 55%);
+    }
+
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #637A63;
+    }
+
+    .btn-primary {
+      background-color: #4A5E4A;
+      color: #FAF7F2;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background-color 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background-color: #2F3D2F; transform: translateY(-2px); }
+
+    .btn-cta {
+      background-color: #E8DDD0;
+      color: #2F3D2F;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background-color 0.2s, transform 0.15s;
+    }
+    .btn-cta:hover { background-color: #FAF7F2; transform: translateY(-2px); }
+
+    .card {
+      background: #fff;
+      border: 1px solid #E8DDD0;
+      border-radius: 1rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover { box-shadow: 0 8px 32px rgba(60,40,20,0.10); transform: translateY(-4px); }
+
+    .img-placeholder {
+      background: linear-gradient(135deg, #C8B8A2 0%, #E8DDD0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7A6248;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .video-placeholder {
+      background: #1a2a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      cursor: pointer;
+    }
+    .play-btn {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(232,221,208,0.15);
+      border: 2px solid rgba(232,221,208,0.5);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .video-placeholder:hover .play-btn { background: rgba(232,221,208,0.25); transform: scale(1.08); }
+
+    .divider { border: none; border-top: 1px solid #E8DDD0; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Sticky nav */
+    nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/80 border-b border-sand">
+    <div class="max-w-5xl mx-auto px-5 h-14 flex items-center justify-between">
+      <span class="font-display font-bold text-earth text-lg tracking-tight">FußKraft</span>
+      <a href="#kaufen" class="btn-primary text-sm px-5 py-2 rounded-full">Jetzt starten →</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-bg grain relative min-h-screen flex items-center pt-14 overflow-hidden">
+    <div class="relative z-10 max-w-5xl mx-auto px-5 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- Text -->
+      <div class="text-sand-light">
+        <p class="section-label text-moss-light mb-4" style="color:#8aaa8a">Onlinekurs · Fußtraining</p>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-sand leading-tight mb-6" style="color:#E8DDD0">
+          Starke Füße.<br/>Stabiler Körper.
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed mb-10" style="color:#b8c8a8; font-weight:300">
+          Lerne, deine Füße gezielt zu trainieren — für mehr Stabilität, Beweglichkeit und echtes Körpergefühl. Strukturiert, alltagstauglich, ohne Geräte.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#kaufen" class="btn-cta px-8 py-4 rounded-full text-center text-base">
+            Jetzt einschreiben
+          </a>
+          <a href="#inhalt" class="text-sand border border-sand/30 hover:border-sand/60 px-8 py-4 rounded-full text-center text-base transition-colors" style="color:#E8DDD0">
+            Was ist enthalten?
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Image Placeholder -->
+      <div class="hidden md:block">
+        <div class="img-placeholder rounded-2xl aspect-[4/5] overflow-hidden" style="font-size:0.75rem; color:#9a8a78">
+          <div class="text-center px-8">
+            <div class="text-4xl mb-3 opacity-40">📷</div>
+            <p>Bild: Person beim Fußtraining</p>
+            <p class="mt-1 opacity-60">Hier dein eigenes Foto einsetzen</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Decorative arc -->
+    <div class="absolute bottom-0 left-0 right-0" style="height:80px; overflow:hidden;">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:100%;display:block;">
+        <path d="M0,80 Q720,0 1440,80 L1440,80 L0,80 Z" fill="#FAF7F2"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ══ VORTEILE ══ -->
+  <section class="py-24 max-w-5xl mx-auto px-5">
+    <div class="text-center mb-16 reveal">
+      <p class="section-label mb-3">Was du bekommst</p>
+      <h2 class="font-display text-4xl md:text-5xl text-earth">Training, das wirklich sitzt</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Vorteil 1 -->
+      <div class="card p-7 reveal">
+        <div class="text-3xl mb-4">🦶</div>
+        <h3 class="font-display text-xl text-earth mb-2">Gezielte Kräftigung</h3>
+        <p class="text-sm leading-relaxed" style="color:#7A6248">Strukturierte Übungen für die kleinen und großen Muskeln rund um den Fuß — aufgebaut in sinnvoller Reihenfolge.</p>
+      </div>
+      <!-- Vorteil 2 -->
+      <div class="card p-7 reveal">
+        <div class="text-3xl mb-4">🔄</div>
+        <h3 class="font-display text-xl text-earth mb-2">Mehr Beweglichkeit</h3>
+        <p class="text-sm leading-relaxed" style="color:#7A6248">Mobilisations- und Dehnungssequenzen, die du in deinen Alltag einbauen kannst — ohne Geräte, jederzeit.</p>
+      </div>
+      <!-- Vorteil 3 -->
+      <div class="card p-7 reveal">
+        <div class="text-3xl mb-4">⚖️</div>
+        <h3 class="font-display text-xl text-earth mb-2">Bessere Balance</h3>
+        <p class="text-sm leading-relaxed" style="color:#7A6248">Gleichgewichts- und Koordinationsübungen, die deine Körperwahrnehmung schärfen und dein Fundament stärken.</p>
+      </div>
+      <!-- Vorteil 4 -->
+      <div class="card p-7 reveal">
+        <div class="text-3xl mb-4">🎯</div>
+        <h3 class="font-display text-xl text-earth mb-2">Klare Struktur</h3>
+        <p class="text-sm leading-relaxed" style="color:#7A6248">Kein Rätselraten: Schritt-für-Schritt-Aufbau mit Videos, Erklärungen und einem einfachen Plan zum Folgen.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider max-w-5xl mx-auto" />
+
+  <!-- ══ KURSINHALT ══ -->
+  <section id="inhalt" class="py-24 max-w-5xl mx-auto px-5">
+    <div class="text-center mb-16 reveal">
+      <p class="section-label mb-3">Kursinhalt</p>
+      <h2 class="font-display text-4xl md:text-5xl text-earth">Was ist im Kurs?</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Bild-Platzhalter -->
+      <div class="img-placeholder rounded-2xl overflow-hidden aspect-video md:aspect-square reveal" style="color:#9a8a78">
+        <div class="text-center px-8">
+          <div class="text-4xl mb-3 opacity-40">📷</div>
+          <p>Bild: Kursübersicht / Screenshot</p>
+        </div>
+      </div>
+
+      <!-- Module -->
+      <div class="space-y-4 reveal">
+        <div class="flex gap-4 items-start p-5 rounded-xl bg-sand-light" style="background:#F5F0EA">
+          <span class="font-display text-2xl text-earth font-bold min-w-[2rem]">01</span>
+          <div>
+            <h3 class="font-semibold text-earth mb-1">Grundlagen & Anatomie</h3>
+            <p class="text-sm" style="color:#7A6248">Wie ist der Fuß aufgebaut? Welche Muskeln und Strukturen sind entscheidend? Kurz, klar, praxisnah.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-5 rounded-xl" style="background:#F5F0EA">
+          <span class="font-display text-2xl text-earth font-bold min-w-[2rem]">02</span>
+          <div>
+            <h3 class="font-semibold text-earth mb-1">Mobilisation & Dehnung</h3>
+            <p class="text-sm" style="color:#7A6248">Gelenke, Faszien und Muskeln werden mobilisiert — für mehr Bewegungsfreiheit Schritt für Schritt.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-5 rounded-xl" style="background:#F5F0EA">
+          <span class="font-display text-2xl text-earth font-bold min-w-[2rem]">03</span>
+          <div>
+            <h3 class="font-semibold text-earth mb-1">Kräftigung & Aktivierung</h3>
+            <p class="text-sm" style="color:#7A6248">Gezielte Übungen für Zehen, Gewölbe, Ferse und Knöchel — aufeinander aufbauend.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-5 rounded-xl" style="background:#F5F0EA">
+          <span class="font-display text-2xl text-earth font-bold min-w-[2rem]">04</span>
+          <div>
+            <h3 class="font-semibold text-earth mb-1">Balance & Koordination</h3>
+            <p class="text-sm" style="color:#7A6248">Übungen für Gleichgewicht und Körpergefühl, die dein Training auf die nächste Ebene bringen.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-5 rounded-xl" style="background:#F5F0EA">
+          <span class="font-display text-2xl text-earth font-bold min-w-[2rem]">05</span>
+          <div>
+            <h3 class="font-semibold text-earth mb-1">Alltagsintegration & Routinen</h3>
+            <p class="text-sm" style="color:#7A6248">Kurze tägliche Routinen, die du dauerhaft beibehalten kannst — auch bei wenig Zeit.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ VIDEO ══ -->
+  <section class="py-16 bg-sand-light" style="background:#F0EAE0">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="text-center mb-10 reveal">
+        <p class="section-label mb-3">Einblick</p>
+        <h2 class="font-display text-4xl text-earth">Sieh selbst, wie es funktioniert</h2>
+      </div>
+
+      <!-- Video Placeholder -->
+      <div class="video-placeholder rounded-2xl overflow-hidden aspect-video reveal">
+        <div class="play-btn">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5.14v14l11-7-11-7z" fill="#E8DDD0"/>
+          </svg>
+        </div>
+        <p style="color:#8aaa8a; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase">Hier dein YouTube-Video einbetten</p>
+        <p style="color:#4a6a4a; font-size:0.7rem; margin-top:4px">Ersetze diesen Platzhalter durch deinen YouTube-Embed-Code</p>
+      </div>
+
+      <!-- YouTube embed instructions (comment) -->
+      <!--
+        Zum Einbetten deines YouTube-Videos:
+        1. Gehe zu deinem YouTube-Video
+        2. Klicke auf "Teilen" → "Einbetten"
+        3. Kopiere den <iframe>-Code
+        4. Ersetze das obige <div class="video-placeholder ..."> komplett durch den iframe-Code
+        Beispiel:
+        <iframe class="w-full aspect-video rounded-2xl"
+          src="https://www.youtube.com/embed/DEINE_VIDEO_ID"
+          frameborder="0" allowfullscreen></iframe>
+      -->
+    </div>
+  </section>
+
+  <!-- ══ KAUFBEREICH ══ -->
+  <section id="kaufen" class="py-24 max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <p class="section-label mb-3">Einstieg</p>
+      <h2 class="font-display text-4xl md:text-5xl text-earth">Bereit anzufangen?</h2>
+      <p class="mt-4 text-lg max-w-xl mx-auto" style="color:#7A6248; font-weight:300">
+        Einmaliger Zugang — kein Abo, kein Verfallsdatum. Lern in deinem eigenen Tempo.
+      </p>
+    </div>
+
+    <div class="max-w-md mx-auto card p-10 text-center reveal">
+      <!-- Preis-Platzhalter -->
+      <p class="section-label mb-2">Vollzugang</p>
+      <div class="font-display text-6xl text-earth font-black mb-1">XX €</div>
+      <p class="text-sm mb-8" style="color:#9a8a78">Einmalige Zahlung · inkl. MwSt.</p>
+
+      <ul class="text-left space-y-3 mb-8 text-sm" style="color:#5C4A36">
+        <li class="flex gap-2 items-start"><span class="text-moss mt-0.5">✓</span> 5 Kursmodule mit Videoanleitungen</li>
+        <li class="flex gap-2 items-start"><span class="text-moss mt-0.5">✓</span> Schritt-für-Schritt Trainingsplan</li>
+        <li class="flex gap-2 items-start"><span class="text-moss mt-0.5">✓</span> Übungsanleitungen zum Download</li>
+        <li class="flex gap-2 items-start"><span class="text-moss mt-0.5">✓</span> Dauerhafter Zugang ohne Abo</li>
+        <li class="flex gap-2 items-start"><span class="text-moss mt-0.5">✓</span> Auf Handy, Tablet & Desktop</li>
+      </ul>
+
+      <!-- Digistore24 Kaufbutton Platzhalter -->
+      <a
+        href="#DIGISTORE24-LINK-HIER-EINSETZEN"
+        class="btn-primary block w-full py-4 rounded-full text-base"
+        onclick="return false;"
+        title="Kauflink folgt – hier Digistore24-Link einsetzen"
+      >
+        Jetzt kaufen → (Link folgt)
+      </a>
+
+      <!-- Digistore24 Hinweis (comment) -->
+      <!--
+        Kaufbutton aktivieren:
+        1. Erstelle dein Produkt in Digistore24
+        2. Kopiere deinen Bestelllink (sieht aus wie: https://www.digistore24.com/product/XXXXXX)
+        3. Ersetze "#DIGISTORE24-LINK-HIER-EINSETZEN" oben mit deinem Link
+        4. Entferne das onclick="return false;" Attribut
+      -->
+
+      <p class="text-xs mt-4" style="color:#9a8a78">Sichere Zahlung über Digistore24</p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="border-t border-sand py-12" style="background:#2F3D2F">
+    <div class="max-w-5xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <span class="font-display text-xl font-bold" style="color:#E8DDD0">FußKraft</span>
+        <nav class="flex flex-wrap justify-center gap-6 text-sm" style="color:#8aaa8a">
+          <!-- Platzhalter-Links – ersetze # mit deinen echten Seiten -->
+          <a href="#" class="hover:text-sand transition-colors">Impressum</a>
+          <a href="#" class="hover:text-sand transition-colors">Datenschutz</a>
+          <a href="#" class="hover:text-sand transition-colors">AGB</a>
+          <a href="mailto:info@beispiel.de" class="hover:text-sand transition-colors">Kontakt</a>
+        </nav>
+        <p class="text-xs" style="color:#4a6a4a">© 2025 FußKraft. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ SCROLL REVEAL SCRIPT ══ -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
