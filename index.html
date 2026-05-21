@@ -101,10 +101,10 @@
     /* Rewritten: empowering, not finger-pointing */
     .warum-center p { margin: 0 auto; font-size: 18px; color: rgba(0,0,0,0.6); max-width: none; font-weight: 300; line-height: 1.8; }
     .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 1280px; margin: 0 auto; }
-    .problem-card { border-radius: var(--rad-lg); border: 1px solid var(--lgrey); background: var(--cream); padding: 26px 28px; }
+    .problem-card { border-radius: var(--rad-lg); border: 1px solid rgba(0,0,0,0.12); background: #fff; padding: 26px 28px; box-shadow: 0 1px 4px rgba(5,12,18,0.05); }
     .problem-card-inner { display: flex; align-items: center; gap: 14px; }
-    .problem-line { width: 24px; height: 1px; background: var(--petrol); flex-shrink: 0; opacity: 0.6; }
-    .problem-text { font-size: 15px; font-weight: 500; color: rgba(0,0,0,0.72); }
+    .problem-line { width: 24px; height: 1px; background: var(--text); flex-shrink: 0; opacity: 0.35; }
+    .problem-text { font-size: 15px; font-weight: 500; color: rgba(0,0,0,0.68); }
 
     /* ── BEWEGUNGSKETTE — sand bg with breathing room ── */
     #kette { background: var(--sand-bg); padding: 120px 40px; }
@@ -148,7 +148,7 @@
     .wiss-box--yes .wiss-item::before { content: '✓'; color: var(--petrol-l); font-size: 13px; font-weight: 700; }
     .wiss-statement { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 56px; }
     .wiss-statement h3 { font-family: var(--rh); font-size: clamp(1.35rem, 2.5vw, 1.85rem); font-weight: 700; color: #fff; line-height: 1.38; max-width: 860px; margin-bottom: 18px; letter-spacing: -0.01em; }
-    .wiss-source { display: inline-flex; align-items: center; gap: 8px; font-family: var(--rh); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); border: 1px solid rgba(255,255,255,0.09); padding: 6px 14px; border-radius: 20px; }
+    .wiss-source { display: inline-flex; align-items: center; gap: 8px; font-family: var(--rh); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.22); padding: 6px 14px; border-radius: 20px; }
     .wiss-source::before { content: '◎'; color: var(--petrol-l); font-size: 9px; }
 
     /* ── KURS — light bg, breathing room ── */
@@ -159,6 +159,7 @@
     /* Fachbegriff-Entzauberung */
     .kurs-intro-note { display: inline-block; margin-top: 16px; font-size: 14px; color: rgba(0,0,0,0.42); font-style: italic; }
     .kurs-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+    .kurs-sticky-wrap { position: sticky; top: 100px; align-self: start; }
     .kurs-sticky { background: #fff; border-radius: var(--rad-lg); padding: 40px; box-shadow: 0 8px 40px rgba(5,12,18,0.06); border: 1px solid var(--lgrey); }
     .kurs-sticky h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 10px; }
     .kurs-sticky > p { font-size: 15px; color: rgba(0,0,0,0.55); max-width: none; margin-bottom: 28px; line-height: 1.7; font-weight: 300; }
@@ -251,7 +252,11 @@
       .hero-image { aspect-ratio: 16/9; max-width: 560px; }
       .wiss-boxes { grid-template-columns: 1fr; }
       .problem-grid { grid-template-columns: 1fr 1fr; }
+      .kurs-sticky-wrap { position: static; }
       .kurs-sticky { position: static; }
+      .kurs-inner { display: flex; flex-direction: column; }
+      .kurs-inner .weeks-list { order: 1; }
+      .kurs-inner .kurs-sticky-wrap { order: 2; }
       .nav-links { display: none; }
       nav .nav-inner { padding: 16px 24px; }
     }
@@ -272,7 +277,7 @@
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Starke Füße<span>.</span></a>
+    <a href="#hero" class="nav-logo">Starke Fuesse</a>
     <div class="nav-links">
       <a href="#warum">Warum</a>
       <a href="#wissenschaft">Wissenschaft</a>
@@ -350,32 +355,7 @@
       <div class="kette-slogan">Starke Füße. Stabiler Körper.</div>
     </div>
     <div class="kette-visual fade">
-      <div class="kette-visual-title">
-        <span class="lbl" style="display:block;">Bewegungskette</span>
-        <h3>Fuß als Fundament</h3>
-      </div>
-      <div class="kette-nodes">
-        <div class="kette-node kette-node--active">
-          <div class="kette-node-num">01</div>
-          <div class="kette-node-body">
-            <div class="kette-node-title">Fuß &amp; Sprunggelenk</div>
-            <div class="kette-node-sub">Erstkontakt · Fundament · Basis</div>
-          </div>
-          <div class="kette-fokus">Fokus</div>
-        </div>
-        <div class="kette-node">
-          <div class="kette-node-num">02</div>
-          <div class="kette-node-body"><div class="kette-node-title">Knie</div><div class="kette-node-sub">Übertragung · Ausrichtung</div></div>
-        </div>
-        <div class="kette-node">
-          <div class="kette-node-num">03</div>
-          <div class="kette-node-body"><div class="kette-node-title">Hüfte</div><div class="kette-node-sub">Stabilität · Kraftübertragung</div></div>
-        </div>
-        <div class="kette-node">
-          <div class="kette-node-num">04</div>
-          <div class="kette-node-body"><div class="kette-node-title">Unterer Rücken</div><div class="kette-node-sub">Haltung · Gesamtkörperkontrolle</div></div>
-        </div>
-      </div>
+      <img src="/bewegungskette.png" alt="Bewegungskette — Der Fuß als Fundament" style="width:100%; border-radius: var(--rad-lg); display:block;" />
     </div>
   </div>
 </section>
@@ -420,7 +400,7 @@
     <span class="kurs-intro-note">Die Übungen haben Namen wie Kompassschritt oder Short Foot — das klingt neu, ist aber schnell gelernt und direkt im Alltag spürbar.</span>
   </div>
   <div class="kurs-inner">
-    <div style="position: sticky; top: 100px; align-self: start;">
+    <div class="kurs-sticky-wrap">
       <div class="kurs-sticky fade">
         <h3>Was dich erwartet</h3>
         <p>Videobasiert, präzise angeleitet und an dein Level anpassbar — damit du sofort starten kannst.</p>
@@ -469,7 +449,7 @@
   <div class="furwen-inner">
     <div class="furwen-top fade">
       <div class="lbl">Für wen dieser Kurs gemacht ist</div>
-      <h2>Für Menschen, die ihre Gesundheit aktiv in die Hand nehmen.</h2>
+      <h2>Für Menschen, die ihre Gesundheit aktiv in die eigene Hand nehmen möchten.</h2>
       <p>Die Füße als erstes Gelenk zu trainieren macht intuitiv Sinn. Dieser Kurs ist für Menschen, die das erkennen und eigenverantwortlich etwas für ihre Bewegungsqualität tun wollen.</p>
     </div>
     <div class="furwen-statements fade">
@@ -576,7 +556,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Starke Füße<span>.</span></div>
+    <div class="footer-logo">Starke Fuesse</div>
     <div class="footer-links">
       <a href="/impressum.html">Impressum</a>
       <a href="/datenschutz.html">Datenschutz</a>
