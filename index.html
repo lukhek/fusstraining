@@ -1,9 +1,10 @@
-export default function PremiumFusskursLandingpage() {
+export default function Page() {
   const fontStyles = `
     @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&family=Raleway:wght@500;600;700;800&display=swap');
     .font-heading { font-family: 'Raleway', sans-serif; }
     .font-body { font-family: 'Nunito Sans', sans-serif; }
   `;
+
   const benefits = [
     "Mehr Stabilität & Balance im Alltag",
     "Mehr Kontrolle & Bewegungsvertrauen",
@@ -41,6 +42,7 @@ export default function PremiumFusskursLandingpage() {
   return (
     <main className="font-body min-h-screen bg-[#F8F8F6] text-[#101820]">
       <style>{fontStyles}</style>
+
       <header className="sticky top-0 z-50 border-b border-black/10 bg-[#F8F8F6]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#top" className="text-sm font-bold uppercase tracking-[0.18em]">Starke Füße<span className="text-[#006D7A]">.</span></a>
@@ -144,12 +146,12 @@ export default function PremiumFusskursLandingpage() {
             </div>
             <div className="grid gap-4">
               {[
-                ['01', 'Fuß & Sprunggelenk', 'Erstkontakt · Fundament · Basis', true],
-                ['02', 'Knie', 'Übertragung · Ausrichtung'],
-                ['03', 'Hüfte', 'Stabilität · Kraftübertragung'],
-                ['04', 'Unterer Rücken', 'Haltung · Gesamtkörperkontrolle'],
+                ["01", "Fuß & Sprunggelenk", "Erstkontakt · Fundament · Basis", true],
+                ["02", "Knie", "Übertragung · Ausrichtung"],
+                ["03", "Hüfte", "Stabilität · Kraftübertragung"],
+                ["04", "Unterer Rücken", "Haltung · Gesamtkörperkontrolle"],
               ].map(([num, title, sub, active]) => (
-                <div key={title} className={`flex items-center gap-5 border px-6 py-5 ${active ? 'border-[#006D7A] bg-[#006D7A] text-white' : 'border-black/10 bg-white text-[#050C12]'}`}>
+                <div key={title} className={`flex items-center gap-5 border px-6 py-5 ${active ? "border-[#006D7A] bg-[#006D7A] text-white" : "border-black/10 bg-white text-[#050C12]"}`}>
                   <div className="text-xs font-bold tracking-[0.18em] opacity-60">{num}</div>
                   <div><div className="font-bold">{title}</div><div className="text-sm opacity-65">{sub}</div></div>
                   {active && <div className="ml-auto rounded-full bg-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em]">Fokus</div>}
@@ -172,11 +174,22 @@ export default function PremiumFusskursLandingpage() {
           <div className="mt-24 grid gap-10 md:grid-cols-2">
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
               <p className="mb-6 text-xs font-bold uppercase tracking-[0.24em] text-white/35">Schwächere Evidenz</p>
-              {['Fußgewölbe wieder aufbauen', 'Fehlstellungen korrigieren', 'Hallux wegtrainieren', 'Passive Mobilisationsroutinen'].map((item) => <div key={item} className="border-b border-white/10 py-4 text-white/55 last:border-0">• {item}</div>)}
+              {[
+                "Fußgewölbe wieder aufbauen",
+                "Fehlstellungen korrigieren",
+                "Hallux wegtrainieren",
+                "Passive Mobilisationsroutinen",
+              ].map((item) => <div key={item} className="border-b border-white/10 py-4 text-white/55 last:border-0">• {item}</div>)}
             </div>
             <div className="rounded-[2rem] border border-[#006D7A]/70 bg-[#006D7A]/20 p-8">
               <p className="mb-6 text-xs font-bold uppercase tracking-[0.24em] text-[#00A1AF]">Stärkere Evidenz</p>
-              {['Balance-Training', 'Funktionelle Stabilität', 'Neuromuskuläre Kontrolle', 'Gezieltes Krafttraining', 'Alltagsnahe Bewegung'].map((item) => <div key={item} className="flex items-center gap-3 border-b border-[#006D7A]/30 py-4 text-white last:border-0"><span className="text-[#00A1AF] text-lg font-bold">✓</span><span>{item}</span></div>)}
+              {[
+                "Balance-Training",
+                "Funktionelle Stabilität",
+                "Neuromuskuläre Kontrolle",
+                "Gezieltes Krafttraining",
+                "Alltagsnahe Bewegung",
+              ].map((item) => <div key={item} className="flex items-center gap-3 border-b border-[#006D7A]/30 py-4 text-white last:border-0"><span className="text-lg font-bold text-[#00A1AF]">✓</span><span>{item}</span></div>)}
             </div>
           </div>
           <div className="mt-20">
@@ -191,17 +204,23 @@ export default function PremiumFusskursLandingpage() {
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">Kursaufbau</p>
             <h2 className="font-heading mt-5 text-4xl font-semibold leading-tight tracking-[-0.015em] md:text-5xl">Strukturierter Aufbau für starke Füße.</h2>
           </div>
-          </div>
+        </div>
       </section>
 
-      <section id="kurs" className="px-6 py-24">
+      <section id="kurs" className="px-6 py-32">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[2rem] bg-white p-8 shadow-xl shadow-black/5 lg:sticky lg:top-28 lg:self-start">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">So funktioniert der Kurs</p>
             <h2 className="font-heading mt-5 text-4xl font-semibold tracking-[-0.015em] md:text-5xl">6 Wochen. Klarer Aufbau. Realistisch umsetzbar.</h2>
             <p className="mt-5 text-lg leading-8 text-black/65">Der Kurs kombiniert eine kurze tägliche Routine mit zwei gezielten Trainingseinheiten pro Woche. Kein kompliziertes System. Kein Gerätezwang.</p>
             <div className="mt-7 grid gap-3 text-black/75">
-              {['6-Wochen-Onlinekurs', 'Tägliche Mini-Routine unter 5 Minuten', '2x pro Woche gezieltes Training à 15–20 Minuten', '24/7 auf allen Endgeräten abrufbar', 'Zuhause ohne Fitnessstudio und ohne Geräte'].map((item) => <div key={item}>✓ {item}</div>)}
+              {[
+                "6-Wochen-Onlinekurs",
+                "Tägliche Mini-Routine unter 5 Minuten",
+                "2x pro Woche gezieltes Training à 15–20 Minuten",
+                "24/7 auf allen Endgeräten abrufbar",
+                "Zuhause ohne Fitnessstudio und ohne Geräte",
+              ].map((item) => <div key={item}>✓ {item}</div>)}
             </div>
           </div>
           <div className="rounded-[2rem] border border-black/10 bg-white px-6 py-4 md:px-9 md:py-6">
@@ -226,7 +245,12 @@ export default function PremiumFusskursLandingpage() {
             </div>
             <div className="bg-[#050C12] p-8 md:p-14">
               <div className="space-y-4">
-                {['Du möchtest dich sicherer und stabiler bewegen.', 'Du willst deine Füße sinnvoll trainieren.', 'Du suchst ein klares System statt zufälliger YouTube-Übungen.', 'Du willst präventiv etwas für Bewegungsqualität und Belastbarkeit tun.'].map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.055] p-4 text-white/78">→ {item}</div>)}
+                {[
+                  "Du möchtest dich sicherer und stabiler bewegen.",
+                  "Du willst deine Füße sinnvoll trainieren.",
+                  "Du suchst ein klares System statt zufälliger YouTube-Übungen.",
+                  "Du willst präventiv etwas für Bewegungsqualität und Belastbarkeit tun.",
+                ].map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.055] p-4 text-white/78">→ {item}</div>)}
               </div>
             </div>
           </div>
@@ -241,7 +265,13 @@ export default function PremiumFusskursLandingpage() {
           <div className="mx-auto mt-10 max-w-xl rounded-[2rem] border border-black/10 bg-white p-7 shadow-xl shadow-black/5">
             <div className="flex items-baseline justify-center gap-2"><span className="font-heading text-6xl font-semibold tracking-tight">227 €</span><span className="text-black/50">inkl. MwSt.</span></div>
             <div className="mt-7 grid gap-3 text-left text-black/75">
-              {['6-Wochen-Onlinekurs', 'Kurze tägliche Routine', '2 gezielte Trainingseinheiten pro Woche', '6 Monate Zugriff', '14 Tage Geld-zurück-Garantie'].map((item) => <div key={item}>✓ {item}</div>)}
+              {[
+                "6-Wochen-Onlinekurs",
+                "Kurze tägliche Routine",
+                "2 gezielte Trainingseinheiten pro Woche",
+                "6 Monate Zugriff",
+                "14 Tage Geld-zurück-Garantie",
+              ].map((item) => <div key={item}>✓ {item}</div>)}
             </div>
             <a href="#" className="mt-8 inline-flex w-full items-center justify-center rounded-sm bg-[#006D7A] px-6 py-4 font-bold text-white hover:bg-[#005C67]">Zugang sichern →</a>
             <p className="mt-4 text-sm text-black/45">Sicher bezahlen. Sofortiger Zugriff nach Kauf.</p>
@@ -282,7 +312,7 @@ export default function PremiumFusskursLandingpage() {
             Zugang sichern →
           </a>
           <div className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-3">
-            {['Stabilität', 'Balance', 'Kontrolle', 'Belastbarkeit', 'Bewegungsvertrauen'].map((item) => (
+            {["Stabilität", "Balance", "Kontrolle", "Belastbarkeit", "Bewegungsvertrauen"].map((item) => (
               <span key={item} className="rounded-full border border-white/12 bg-white/[0.05] px-5 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/45">{item}</span>
             ))}
           </div>
