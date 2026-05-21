@@ -1,1417 +1,301 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Starke Füße. Stabiler Körper. – Premium Fußkurs</title>
-  <meta name="description" content="Modernes funktionelles Fußtraining für mehr Stabilität, Balance und Bewegungsvertrauen im Alltag. 6-Wochen-Onlinekurs nach wissenschaftlichem Vorbild." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+export default function PremiumFusskursLandingpage() {
+  const fontStyles = `
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&family=Raleway:wght@500;600;700;800&display=swap');
+    .font-heading { font-family: 'Raleway', sans-serif; }
+    .font-body { font-family: 'Nunito Sans', sans-serif; }
+  `;
+  const benefits = [
+    "Mehr Stabilität & Balance im Alltag",
+    "Mehr Kontrolle & Bewegungsvertrauen",
+    "Stärkere und belastbarere Füße",
+    "Kurze Routinen unter 5 Minuten",
+    "Komplett zuhause, ohne Geräte",
+  ];
 
-  <style>
-    /* ── DESIGN TOKENS ─────────────────────────────────── */
-    :root {
-      --off-white:   #F8F8F8;
-      --navy:        #050C12;
-      --anthracite:  #0D1821;
-      --petrol:      #006D7A;
-      --petrol-light:#008593;
-      --sand:        #D4C4B1;
-      --sand-light:  #EDE4D8;
-      --mid-grey:    #8A9099;
-      --light-grey:  #E8E8E8;
+  const problemItems = [
+    "Unsicherheit auf unebenem Boden",
+    "Schwächere Balance im Alltag",
+    "Steife Füße und Waden",
+    "Weniger Vertrauen in Bewegungen",
+    "Instabiles Gefühl bei Richtungswechseln",
+    "Das Gefühl, nicht mehr ganz so belastbar zu sein",
+  ];
 
-      --font-head: 'Raleway', sans-serif;
-      --font-body: 'Nunito Sans', sans-serif;
+  const weeks = [
+    ["Woche 1", "Kontrolle etablieren", "Kompassschritt lernen, Sicherheit schaffen, Routine starten und den Fuß bewusst vorbereiten."],
+    ["Woche 2", "Kraftbasis aufbauen", "Wade, Tibialis und Fußmuskulatur gezielt aktivieren, während die Kontrollroutine weiterläuft."],
+    ["Woche 3", "Fußkontrolle verfeinern", "Short Foot, Toe Yoga, Großzehenkontrolle und bewusster Standfuß als nächster Baustein."],
+    ["Woche 4", "Dynamik und Reaktion", "Der Kompassschritt wird anspruchsvoller: größere Reichweiten, Richtungswechsel und kontrollierte Störungen."],
+    ["Woche 5", "Alltagstransfer", "Treppen, Gehen, Blickwechsel und leichte Dual-Task-Elemente übertragen die Kontrolle in echte Bewegung."],
+    ["Woche 6", "Stabilität sichern", "Fortschritt testen, Routine festigen und einen langfristigen Plan für starke Füße etablieren."],
+  ];
 
-      --radius: 3px;
-      --transition: 0.25s ease;
-    }
+  const faqs = [
+    ["Brauche ich Geräte?", "Nein. Der Kurs ist so aufgebaut, dass du ihn zuhause ohne Fitnessstudio umsetzen kannst. Eine Wand, ein Stuhl oder eine Arbeitsplatte können als Sicherheitsoption genutzt werden."],
+    ["Ist der Kurs für Anfänger geeignet?", "Ja. Die Übungen sind progressiv aufgebaut. Du startest kontrolliert und steigerst dich erst, wenn du dich sicher fühlst."],
+    ["Wie viel Zeit brauche ich?", "Die tägliche Routine dauert unter 5 Minuten. Zusätzlich kommen 2 gezielte Trainingseinheiten pro Woche mit etwa 15–20 Minuten dazu."],
+    ["Hilft der Kurs bei Schmerzen oder Fehlstellungen?", "Der Kurs ersetzt keine medizinische Behandlung. Der Fokus liegt auf Funktion: Kraft, Kontrolle, Balance und Bewegungsvertrauen."],
+    ["Warum nicht einfach normale Fußgymnastik?", "Weil der Kurs nicht nur isolierte Fußübungen nutzt, sondern Fußkraft, Wadenkraft, Balance, Sprunggelenkskontrolle und alltagsnahe Bewegung kombiniert."],
+  ];
 
-    /* ── RESET ─────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      background: var(--off-white);
-      color: var(--anthracite);
-      font-size: 17px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ── UTILITIES ─────────────────────────────────────── */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-    .container--wide {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-    .section { padding: 96px 0; }
-    .section--dark {
-      background: var(--anthracite);
-      color: var(--off-white);
-    }
-    .section--navy {
-      background: var(--navy);
-      color: var(--off-white);
-    }
-    .section--sand {
-      background: var(--sand-light);
-    }
-
-    .label {
-      display: inline-block;
-      font-family: var(--font-head);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--petrol);
-      margin-bottom: 20px;
-    }
-    .label--light { color: var(--sand); }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-head);
-      line-height: 1.2;
-      font-weight: 700;
-    }
-    h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); letter-spacing: -0.02em; }
-    h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.01em; }
-    h3 { font-size: 1.2rem; font-weight: 600; }
-
-    p { color: var(--mid-grey); max-width: 620px; }
-    p.dark { color: rgba(255,255,255,0.65); }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--petrol);
-      color: #fff;
-      font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 18px 38px;
-      border: none;
-      cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
-      border-radius: var(--radius);
-    }
-    .cta-btn:hover {
-      background: var(--petrol-light);
-      transform: translateY(-2px);
-    }
-    .cta-btn--outline {
-      background: transparent;
-      border: 2px solid var(--petrol);
-      color: var(--petrol);
-    }
-    .cta-btn--outline:hover {
-      background: var(--petrol);
-      color: #fff;
-    }
-    .cta-btn--light {
-      background: var(--off-white);
-      color: var(--petrol);
-    }
-    .cta-btn--light:hover {
-      background: var(--sand-light);
-      transform: translateY(-2px);
-    }
-
-    /* ── NAV ───────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 20px 0;
-      background: rgba(248,248,248,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--light-grey);
-      transition: box-shadow var(--transition);
-    }
-    nav.scrolled { box-shadow: 0 2px 24px rgba(5,12,18,0.07); }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-    .nav-logo {
-      font-family: var(--font-head);
-      font-weight: 800;
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--navy);
-    }
-    .nav-logo span { color: var(--petrol); }
-    .nav-cta {
-      font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--petrol);
-      border: 1.5px solid var(--petrol);
-      padding: 10px 22px;
-      border-radius: var(--radius);
-      transition: background var(--transition), color var(--transition);
-    }
-    .nav-cta:hover { background: var(--petrol); color: #fff; }
-
-    /* ── HERO ──────────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 100px;
-      position: relative;
-      overflow: hidden;
-      background: var(--off-white);
-    }
-    .hero-bg-line {
-      position: absolute;
-      top: 0; right: 0;
-      width: 55%;
-      height: 100%;
-      background: linear-gradient(135deg, var(--sand-light) 0%, transparent 60%);
-      opacity: 0.45;
-      z-index: 0;
-    }
-    .hero-bg-circle {
-      position: absolute;
-      bottom: -180px; right: -100px;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      border: 1px solid var(--sand);
-      opacity: 0.3;
-      z-index: 0;
-    }
-    .hero-bg-circle2 {
-      position: absolute;
-      bottom: -80px; right: 0px;
-      width: 380px; height: 380px;
-      border-radius: 50%;
-      border: 1px solid var(--petrol);
-      opacity: 0.08;
-      z-index: 0;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    .hero-eyebrow-line {
-      width: 40px; height: 1px;
-      background: var(--petrol);
-    }
-    .hero-eyebrow-text {
-      font-family: var(--font-head);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--petrol);
-    }
-    #hero h1 {
-      margin-bottom: 24px;
-      color: var(--navy);
-    }
-    #hero h1 em {
-      font-style: normal;
-      color: var(--petrol);
-    }
-    #hero .hero-sub {
-      font-size: 18px;
-      color: var(--mid-grey);
-      max-width: 560px;
-      margin-bottom: 44px;
-      font-weight: 300;
-    }
-    .hero-bullets {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 48px;
-    }
-    .hero-bullet {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--anthracite);
-    }
-    .hero-bullet-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--petrol);
-      flex-shrink: 0;
-    }
-    .hero-trust {
-      margin-top: 40px;
-      font-family: var(--font-head);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: var(--mid-grey);
-      text-transform: uppercase;
-    }
-    .hero-trust span {
-      padding: 0 14px;
-      border-right: 1px solid var(--light-grey);
-    }
-    .hero-trust span:last-child { border: none; }
-    .hero-trust span:first-child { padding-left: 0; }
-
-    /* ── SECTION 2 — WARUM ─────────────────────────────── */
-    .warum-intro {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      font-weight: 300;
-      color: var(--anthracite);
-      max-width: 680px;
-      margin-bottom: 56px;
-      line-height: 1.65;
-    }
-    .warum-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 1px solid var(--light-grey);
-      margin-bottom: 64px;
-    }
-    .warum-cell {
-      padding: 28px 32px;
-      border-right: 1px solid var(--light-grey);
-      border-bottom: 1px solid var(--light-grey);
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-    .warum-cell:nth-child(2n) { border-right: none; }
-    .warum-cell:nth-last-child(-n+2) { border-bottom: none; }
-    .warum-cell-icon {
-      width: 7px; height: 7px;
-      background: var(--petrol);
-      border-radius: 50%;
-      margin-top: 9px;
-      flex-shrink: 0;
-    }
-    .warum-cell-text {
-      font-size: 15px;
-      color: var(--anthracite);
-      line-height: 1.5;
-    }
-    .warum-symptoms {
-      background: var(--navy);
-      color: var(--off-white);
-      padding: 52px 56px;
-      border-radius: var(--radius);
-      position: relative;
-      overflow: hidden;
-    }
-    .warum-symptoms::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      border: 1px solid rgba(212,196,177,0.15);
-    }
-    .warum-symptoms-label {
-      font-family: var(--font-head);
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--sand);
-      margin-bottom: 20px;
-    }
-    .warum-symptoms h3 {
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 1.15rem;
-      color: var(--off-white);
-      margin-bottom: 28px;
-    }
-    .symptom-list {
-      list-style: none;
-      columns: 2;
-      column-gap: 40px;
-    }
-    .symptom-list li {
-      font-size: 15px;
-      color: rgba(248,248,248,0.65);
-      padding: 7px 0;
-      padding-left: 18px;
-      position: relative;
-      break-inside: avoid;
-    }
-    .symptom-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--petrol-light);
-    }
-    .warum-conclusion {
-      margin-top: 56px;
-      padding-top: 48px;
-      border-top: 1px solid var(--light-grey);
-    }
-    .warum-conclusion h3 {
-      font-family: var(--font-head);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-    .warum-conclusion p { margin-bottom: 0; }
-
-    /* ── SECTION 3 — VORTEILE ──────────────────────────── */
-    #vorteile { background: var(--sand-light); }
-    .vorteile-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin: 52px 0;
-    }
-    .vorteil-card {
-      background: var(--off-white);
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: background var(--transition);
-    }
-    .vorteil-card:hover { background: #fff; }
-    .vorteil-num {
-      font-family: var(--font-head);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: var(--petrol);
-    }
-    .vorteil-text {
-      font-size: 15px;
-      color: var(--anthracite);
-      font-weight: 600;
-      line-height: 1.4;
-    }
-    .vorteile-closer {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 12px;
-    }
-    .vorteile-closer-line {
-      flex: 1;
-      height: 1px;
-      background: var(--sand);
-    }
-    .vorteile-closer-text {
-      font-family: var(--font-head);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--petrol);
-      letter-spacing: 0.04em;
-    }
-
-    /* ── SECTION 4 — WISSENSCHAFT ──────────────────────── */
-    #wissenschaft { background: var(--navy); }
-    .wiss-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      margin-bottom: 72px;
-    }
-    .wiss-header h2 { color: var(--off-white); }
-    .wiss-header p { color: rgba(248,248,248,0.55); max-width: none; }
-    .wiss-not {
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 32px 36px;
-      border-radius: var(--radius);
-    }
-    .wiss-not-label {
-      font-family: var(--font-head);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(248,248,248,0.35);
-      margin-bottom: 16px;
-    }
-    .wiss-not-item {
-      font-size: 14px;
-      color: rgba(248,248,248,0.4);
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .wiss-not-item:last-child { border: none; }
-    .wiss-not-item::before {
-      content: '×';
-      color: rgba(248,248,248,0.25);
-      font-size: 14px;
-    }
-    .wiss-yes {
-      padding: 32px 36px;
-      background: rgba(0,109,122,0.15);
-      border: 1px solid rgba(0,109,122,0.4);
-      border-radius: var(--radius);
-    }
-    .wiss-yes-label {
-      font-family: var(--font-head);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--petrol-light);
-      margin-bottom: 16px;
-    }
-    .wiss-yes-item {
-      font-size: 14px;
-      color: rgba(248,248,248,0.8);
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(0,109,122,0.2);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .wiss-yes-item:last-child { border: none; }
-    .wiss-yes-item::before {
-      content: '✓';
-      color: var(--petrol-light);
-      font-size: 13px;
-    }
-    .wiss-boxes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 56px;
-    }
-    .wiss-quote {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 48px;
-      display: flex;
-      gap: 40px;
-    }
-    .wiss-quote-bar {
-      width: 3px;
-      background: var(--petrol);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-    .wiss-quote-text {
-      font-family: var(--font-head);
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: rgba(248,248,248,0.75);
-      line-height: 1.6;
-    }
-    .wiss-quote-source {
-      margin-top: 12px;
-      font-size: 12px;
-      color: rgba(248,248,248,0.35);
-      font-style: italic;
-    }
-
-    /* ── SECTION 5 — SO FUNKTIONIERT ──────────────────── */
-    .kurs-meta {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-bottom: 64px;
-    }
-    .kurs-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .kurs-meta-val {
-      font-family: var(--font-head);
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .kurs-meta-label {
-      font-size: 13px;
-      color: var(--mid-grey);
-    }
-    .kurs-meta-divider {
-      width: 1px;
-      background: var(--light-grey);
-      align-self: stretch;
-    }
-    .kurs-konzept {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-      margin-bottom: 72px;
-    }
-    .kurs-konzept-text h3 {
-      font-family: var(--font-head);
-      font-size: 1.25rem;
-      color: var(--navy);
-      margin-bottom: 20px;
-    }
-    .kurs-konzept-text p { max-width: none; }
-    .kurs-schedule {
-      background: var(--anthracite);
-      padding: 36px;
-      border-radius: var(--radius);
-    }
-    .kurs-schedule-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .kurs-schedule-item:last-child { border: none; padding-bottom: 0; }
-    .kurs-schedule-badge {
-      background: var(--petrol);
-      color: #fff;
-      font-family: var(--font-head);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 2px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .kurs-schedule-badge.muted {
-      background: rgba(255,255,255,0.08);
-      color: rgba(248,248,248,0.5);
-    }
-    .kurs-schedule-desc {
-      font-size: 14px;
-      color: rgba(248,248,248,0.7);
-      line-height: 1.5;
-    }
-    .drei-saeulen {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-    .saeule {
-      padding: 44px 36px;
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-    }
-    .saeule::after {
-      content: '';
-      position: absolute;
-      bottom: -40px; right: -40px;
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      border: 1px solid rgba(0,109,122,0.2);
-    }
-    .saeule-num {
-      font-family: var(--font-head);
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: rgba(0,109,122,0.2);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-    .saeule-title {
-      font-family: var(--font-head);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--off-white);
-      margin-bottom: 12px;
-    }
-    .saeule-desc {
-      font-size: 14px;
-      color: rgba(248,248,248,0.55);
-      max-width: none;
-    }
-
-    /* ── SECTION 6 — FÜR WEN ───────────────────────────── */
-    #furwen { background: var(--off-white); }
-    .furwen-layout {
-      display: grid;
-      grid-template-columns: 5fr 4fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .furwen-checks {
-      list-style: none;
-      margin-bottom: 0;
-    }
-    .furwen-check {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--light-grey);
-      font-size: 16px;
-      color: var(--anthracite);
-    }
-    .furwen-check:first-child { padding-top: 0; }
-    .furwen-check:last-child { border: none; }
-    .furwen-check-mark {
-      width: 22px; height: 22px;
-      border-radius: 50%;
-      border: 1.5px solid var(--petrol);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .furwen-check-mark::after {
-      content: '';
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--petrol);
-    }
-    .furwen-sidebar { }
-    .furwen-sidebar-box {
-      background: var(--sand-light);
-      padding: 36px;
-      border-radius: var(--radius);
-      margin-bottom: 24px;
-    }
-    .furwen-sidebar-box h4 {
-      font-family: var(--font-head);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--petrol);
-      margin-bottom: 20px;
-    }
-    .furwen-tag {
-      display: inline-block;
-      background: var(--off-white);
-      border: 1px solid var(--sand);
-      color: var(--anthracite);
-      font-size: 13px;
-      padding: 6px 14px;
-      border-radius: 20px;
-      margin: 4px 4px 4px 0;
-    }
-
-    /* ── SECTION 7 — INVESTMENT ────────────────────────── */
-    #investment { background: var(--anthracite); }
-    .investment-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .investment-left h2 { color: var(--off-white); }
-    .investment-left p { color: rgba(248,248,248,0.55); max-width: none; margin-bottom: 32px; }
-    .price-display {
-      margin-bottom: 36px;
-    }
-    .price-main {
-      font-family: var(--font-head);
-      font-size: 3.8rem;
-      font-weight: 800;
-      color: var(--off-white);
-      line-height: 1;
-    }
-    .price-note {
-      font-size: 14px;
-      color: rgba(248,248,248,0.45);
-      margin-top: 6px;
-    }
-    .guarantee {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 28px;
-      padding: 18px 24px;
-      background: rgba(0,109,122,0.15);
-      border: 1px solid rgba(0,109,122,0.35);
-      border-radius: var(--radius);
-    }
-    .guarantee-icon {
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .guarantee-text {
-      font-size: 13px;
-      color: rgba(248,248,248,0.65);
-      line-height: 1.5;
-    }
-    .guarantee-text strong {
-      display: block;
-      color: var(--off-white);
-      font-family: var(--font-head);
-      font-size: 14px;
-      margin-bottom: 2px;
-    }
-    .investment-includes {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: 36px;
-    }
-    .investment-includes h4 {
-      font-family: var(--font-head);
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(248,248,248,0.4);
-      margin-bottom: 24px;
-    }
-    .include-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 15px;
-      color: rgba(248,248,248,0.8);
-    }
-    .include-item:first-of-type { padding-top: 0; }
-    .include-item:last-child { border: none; padding-bottom: 0; }
-    .include-dot {
-      width: 6px; height: 6px;
-      background: var(--petrol);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .trust-logos {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-top: 32px;
-    }
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: rgba(248,248,248,0.45);
-      font-family: var(--font-head);
-      letter-spacing: 0.05em;
-    }
-    .trust-badge-icon { font-size: 16px; opacity: 0.6; }
-
-    /* ── SECTION 8 — FAQ ───────────────────────────────── */
-    #faq { background: var(--off-white); }
-    .faq-list { max-width: 720px; }
-    .faq-item {
-      border-bottom: 1px solid var(--light-grey);
-    }
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
-      cursor: pointer;
-      padding: 28px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      font-family: var(--font-head);
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--navy);
-      transition: color var(--transition);
-    }
-    .faq-question:hover { color: var(--petrol); }
-    .faq-icon {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      border: 1.5px solid var(--light-grey);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 16px;
-      color: var(--petrol);
-      transition: transform var(--transition), border-color var(--transition);
-    }
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-      border-color: var(--petrol);
-    }
-    .faq-answer {
-      font-size: 15px;
-      color: var(--mid-grey);
-      padding-bottom: 28px;
-      max-width: 600px;
-      display: none;
-      line-height: 1.7;
-    }
-    .faq-item.open .faq-answer { display: block; }
-
-    /* ── SECTION 9 — FINAL CTA ─────────────────────────── */
-    #finalcta {
-      background: var(--navy);
-      padding: 120px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    #finalcta::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      border: 1px solid rgba(0,109,122,0.12);
-    }
-    #finalcta::after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 480px; height: 480px;
-      border-radius: 50%;
-      border: 1px solid rgba(0,109,122,0.08);
-    }
-    .finalcta-content {
-      position: relative;
-      z-index: 1;
-    }
-    #finalcta h2 {
-      color: var(--off-white);
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 20px;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #finalcta p {
-      color: rgba(248,248,248,0.55);
-      margin: 0 auto 48px;
-      max-width: 480px;
-    }
-    .finalcta-pills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 40px;
-    }
-    .finalcta-pill {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(248,248,248,0.55);
-      font-family: var(--font-head);
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 8px 18px;
-      border-radius: 20px;
-    }
-
-    /* ── FOOTER ────────────────────────────────────────── */
-    footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 40px 0;
-    }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .footer-logo {
-      font-family: var(--font-head);
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(248,248,248,0.4);
-    }
-    .footer-logo span { color: var(--petrol); }
-    .footer-links {
-      display: flex;
-      gap: 28px;
-    }
-    .footer-links a {
-      font-size: 13px;
-      color: rgba(248,248,248,0.3);
-      transition: color var(--transition);
-    }
-    .footer-links a:hover { color: rgba(248,248,248,0.6); }
-    .footer-copy {
-      font-size: 12px;
-      color: rgba(248,248,248,0.2);
-    }
-
-    /* ── ANIMATIONS ────────────────────────────────────── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ── RESPONSIVE ────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .section { padding: 64px 0; }
-      .warum-grid { grid-template-columns: 1fr; }
-      .warum-cell { border-right: none; }
-      .warum-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--light-grey); }
-      .warum-cell:last-child { border-bottom: none; }
-      .symptom-list { columns: 1; }
-      .warum-symptoms { padding: 36px 28px; }
-      .wiss-boxes { grid-template-columns: 1fr; }
-      .wiss-header { grid-template-columns: 1fr; gap: 40px; }
-      .drei-saeulen { grid-template-columns: 1fr; gap: 2px; }
-      .vorteile-grid { grid-template-columns: 1fr 1fr; }
-      .kurs-konzept { grid-template-columns: 1fr; }
-      .furwen-layout { grid-template-columns: 1fr; gap: 40px; }
-      .investment-layout { grid-template-columns: 1fr; gap: 48px; }
-      .hero-trust { display: flex; flex-wrap: wrap; gap: 8px; }
-      .hero-trust span { border: none; padding: 0; }
-      .kurs-meta { gap: 28px; }
-      .kurs-meta-divider { display: none; }
-      nav { padding: 16px 0; }
-    }
-    @media (max-width: 500px) {
-      .vorteile-grid { grid-template-columns: 1fr; }
-      .price-main { font-size: 3rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ── NAV ───────────────────────────────────────────── -->
-  <nav id="mainNav">
-    <div class="nav-inner">
-      <div class="nav-logo">Starke Füße<span>.</span></div>
-      <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="nav-cta" target="_blank" rel="noopener">Jetzt starten</a>
-    </div>
-  </nav>
-
-  <!-- ── HERO ──────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-bg-line"></div>
-    <div class="hero-bg-circle"></div>
-    <div class="hero-bg-circle2"></div>
-    <div class="container hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <div class="hero-eyebrow-text">6-Wochen-Onlinekurs · Wissenschaftlich fundiert</div>
-      </div>
-      <h1>Starke Füße.<br><em>Stabiler Körper.</em></h1>
-      <p class="hero-sub">Modernes funktionelles Fußtraining für mehr Stabilität, Balance und Bewegungsvertrauen im Alltag — nach wissenschaftlichem Vorbild.</p>
-      <div class="hero-bullets">
-        <div class="hero-bullet"><span class="hero-bullet-dot"></span>Mehr Stabilität &amp; Balance im Alltag</div>
-        <div class="hero-bullet"><span class="hero-bullet-dot"></span>Mehr Kontrolle &amp; Bewegungsvertrauen</div>
-        <div class="hero-bullet"><span class="hero-bullet-dot"></span>Stärkere &amp; belastbarere Füße</div>
-        <div class="hero-bullet"><span class="hero-bullet-dot"></span>Tägliche Routinen unter 5 Minuten</div>
-        <div class="hero-bullet"><span class="hero-bullet-dot"></span>Komplett zuhause, ohne Geräte</div>
-      </div>
-      <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="cta-btn" target="_blank" rel="noopener">
-        Jetzt starten
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="hero-trust">
-        <span>6 Wochen Kurs</span>
-        <span>6 Monate Zugriff</span>
-        <span>24/7 flexibel</span>
-        <span>14 Tage Garantie</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WARUM ──────────────────────────────────────────── -->
-  <section id="warum" class="section">
-    <div class="container">
-      <div class="label">Warum Fußtraining?</div>
-      <h2 style="margin-bottom:24px;">Kaum jemand trainiert<br>bewusst seine Füße.</h2>
-      <p class="warum-intro fade-in">Dabei bilden sie die Grundlage fast jeder Bewegung im Alltag. Mit jedem Schritt verarbeitet dein Körper Informationen über Druck, Gleichgewicht, Untergrund und Reaktion — der Fuß ist das erste Gelenk, das den Boden berührt. Er ist dein Fundament.</p>
-
-      <div class="warum-grid fade-in">
-        <div class="warum-cell"><div class="warum-cell-icon"></div><div class="warum-cell-text">Trägt dich durch jeden Tag</div></div>
-        <div class="warum-cell"><div class="warum-cell-icon"></div><div class="warum-cell-text">Bildet die Basis deiner Stabilität</div></div>
-        <div class="warum-cell"><div class="warum-cell-icon"></div><div class="warum-cell-text">Beeinflusst Balance und Bewegungskontrolle</div></div>
-        <div class="warum-cell"><div class="warum-cell-icon"></div><div class="warum-cell-text">Reagiert permanent auf Untergrund und Belastung</div></div>
-        <div class="warum-cell"><div class="warum-cell-icon"></div><div class="warum-cell-text">Steuert Gleichgewicht und Körpersicherheit</div></div>
-        <div class="warum-cell"><div class="warum-cell-icon"></div><div class="warum-cell-text">Ist das erste Gelenk, das den Boden berührt</div></div>
-      </div>
-
-      <div class="warum-symptoms fade-in">
-        <div class="warum-symptoms-label">Was passiert, wenn diese Basis schwächer wird</div>
-        <h3>Es zeigt sich selten dramatisch. Meistens subtil.</h3>
-        <ul class="symptom-list">
-          <li>Weniger stabile Bewegung</li>
-          <li>Unsicherer Einbeinstand</li>
-          <li>Steife Füße und Waden</li>
-          <li>Vorsichtigeres Bewegungsverhalten</li>
-          <li>Mehr Nachdenken bei Bewegung</li>
-          <li>Weniger Vertrauen in den Körper</li>
-          <li>Zunehmende Probleme in Füßen, Knien, Hüfte</li>
-        </ul>
-      </div>
-
-      <div class="warum-conclusion fade-in">
-        <h3>Genau hier setzt dieser Kurs an.</h3>
-        <p>Mit modernem funktionellem Fußtraining nach wissenschaftlichem Vorbild. Für mehr Stabilität, Kontrolle, Balance und Bewegungsvertrauen im Alltag.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── VORTEILE ───────────────────────────────────────── -->
-  <section id="vorteile" class="section">
-    <div class="container--wide">
-      <div class="label">Was sich verbessern kann</div>
-      <h2 style="margin-bottom: 16px;">Was gezieltes<br>Fußtraining bewirkt</h2>
-      <p style="margin-bottom: 0;">Nicht durch extremes Training — sondern durch kurze, gezielte Routinen mit hoher Alltagstauglichkeit.</p>
-      <div class="vorteile-grid fade-in" style="margin-top: 52px;">
-        <div class="vorteil-card"><div class="vorteil-num">01</div><div class="vorteil-text">Mehr Stabilität und Balance im Alltag</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">02</div><div class="vorteil-text">Sichereres Gefühl beim Gehen und Stehen</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">03</div><div class="vorteil-text">Mehr Kontrolle bei Bewegung und Richtungswechseln</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">04</div><div class="vorteil-text">Belastbarere Füße und Waden</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">05</div><div class="vorteil-text">Stabilerer Einbeinstand</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">06</div><div class="vorteil-text">Weniger Steifheit — mehr Bewegungsfreiheit</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">07</div><div class="vorteil-text">Mehr Sicherheit auf Treppen und unebenem Boden</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">08</div><div class="vorteil-text">Mehr Körperkontrolle und Reaktionsfähigkeit</div></div>
-        <div class="vorteil-card"><div class="vorteil-num">09</div><div class="vorteil-text">Das Gefühl, sich wieder leichter bewegen zu können</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WISSENSCHAFT ───────────────────────────────────── -->
-  <section id="wissenschaft" class="section section--navy">
-    <div class="container">
-      <div class="label label--light">Wissenschaftlicher Ansatz</div>
-      <div class="wiss-header">
-        <div>
-          <h2>Modernes Fußtraining setzt auf andere Hebel als gedacht.</h2>
+  return (
+    <main className="font-body min-h-screen bg-[#F8F8F6] text-[#101820]">
+      <style>{fontStyles}</style>
+      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#F8F8F6]/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#top" className="text-sm font-bold uppercase tracking-[0.18em]">Starke Füße<span className="text-[#006D7A]">.</span></a>
+          <nav className="hidden gap-8 text-sm font-semibold text-black/60 md:flex">
+            <a href="#warum" className="hover:text-[#006D7A]">Warum</a>
+            <a href="#wissenschaft" className="hover:text-[#006D7A]">Wissenschaft</a>
+            <a href="#kurs" className="hover:text-[#006D7A]">Kurs</a>
+            <a href="#faq" className="hover:text-[#006D7A]">FAQ</a>
+          </nav>
+          <a href="#investment" className="rounded-sm bg-[#101820] px-5 py-3 text-sm font-bold text-white hover:bg-[#006D7A]">Zugang sichern</a>
         </div>
-        <div>
-          <p class="dark">Die stärkste wissenschaftliche Evidenz liegt nicht beim Korrigieren von Fußformen. Sie liegt bei dem, was tatsächlich Funktion verbessert.</p>
-        </div>
-      </div>
-      <div class="wiss-boxes fade-in">
-        <div class="wiss-not">
-          <div class="wiss-not-label">Schwache Evidenz</div>
-          <div class="wiss-not-item">Fußgewölbe wieder aufbauen</div>
-          <div class="wiss-not-item">Fehlstellungen korrigieren</div>
-          <div class="wiss-not-item">Hallux wegtrainieren</div>
-          <div class="wiss-not-item">Passive Mobilisationsroutinen</div>
-        </div>
-        <div class="wiss-yes">
-          <div class="wiss-yes-label">Starke Evidenz</div>
-          <div class="wiss-yes-item">Balance-Training</div>
-          <div class="wiss-yes-item">Funktionelle Stabilität</div>
-          <div class="wiss-yes-item">Neuromuskuläre Kontrolle</div>
-          <div class="wiss-yes-item">Gezieltes Krafttraining</div>
-          <div class="wiss-yes-item">Alltagsnahe Bewegung</div>
-        </div>
-      </div>
-      <div class="wiss-quote fade-in">
-        <div class="wiss-quote-bar"></div>
-        <div>
-          <div class="wiss-quote-text">Balance ist keine reine Kraftfrage. Balance ist eine Fähigkeit des Nervensystems — und sie lässt sich gezielt trainieren. Genau darauf baut dieser Kurs auf.</div>
-          <div class="wiss-quote-source">Basierend auf aktueller Forschung zu Balance- und Sturzpräventionstraining (Cochrane Review, BJSM)</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </header>
 
-  <!-- ── SO FUNKTIONIERT ────────────────────────────────── -->
-  <section id="kurs" class="section">
-    <div class="container">
-      <div class="label">So funktioniert der Kurs</div>
-      <h2 style="margin-bottom: 52px;">Klar strukturiert.<br>Alltagstauglich aufgebaut.</h2>
+      <section id="top" className="relative overflow-hidden px-6 py-24 md:py-36">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(237,228,216,0.72),transparent_34%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-24 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="max-w-2xl">
+            <div className="mb-8 flex items-center gap-4">
+              <div className="h-px w-12 bg-[#006D7A]" />
+              <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#006D7A]">6-Wochen-Onlinekurs · Wissenschaftlich fundiert</p>
+            </div>
 
-      <div class="kurs-meta fade-in">
-        <div class="kurs-meta-item">
-          <div class="kurs-meta-val">6</div>
-          <div class="kurs-meta-label">Wochen Programm</div>
-        </div>
-        <div class="kurs-meta-divider"></div>
-        <div class="kurs-meta-item">
-          <div class="kurs-meta-val">&lt;5'</div>
-          <div class="kurs-meta-label">Tägliche Routine</div>
-        </div>
-        <div class="kurs-meta-divider"></div>
-        <div class="kurs-meta-item">
-          <div class="kurs-meta-val">2×</div>
-          <div class="kurs-meta-label">pro Woche gezieltes Training</div>
-        </div>
-        <div class="kurs-meta-divider"></div>
-        <div class="kurs-meta-item">
-          <div class="kurs-meta-val">24/7</div>
-          <div class="kurs-meta-label">Zugriff auf allen Geräten</div>
-        </div>
-      </div>
+            <h1 className="font-heading text-5xl font-semibold leading-[1.04] tracking-[-0.015em] text-[#050C12] md:text-7xl">
+              Starke Füße.<br />
+              <span className="text-[#006D7A]">Stabiler Körper.</span>
+            </h1>
 
-      <div class="kurs-konzept fade-in">
-        <div class="kurs-konzept-text">
-          <h3>Das Konzept hinter dem Kurs</h3>
-          <p style="margin-bottom: 20px;">Motorische Kontrolle verbessert sich vor allem durch Wiederholung und Regelmäßigkeit. Deshalb setzt der Kurs auf kurze, tägliche Einheiten — nicht auf gelegentliches Intensivtraining.</p>
-          <p>Die Übungen sind an unterschiedliche Leistungslevel anpassbar und bauen strukturiert aufeinander auf. Videobasiert, mit schriftlichen Übungsbeschreibungen, auf allen Endgeräten nutzbar.</p>
-        </div>
-        <div class="kurs-schedule">
-          <div class="kurs-schedule-item">
-            <div class="kurs-schedule-badge">Täglich</div>
-            <div class="kurs-schedule-desc">Kurze Kontrollroutine unter 5 Minuten — Bewegungsvertrauen durch regelmäßige Wiederholung</div>
-          </div>
-          <div class="kurs-schedule-item">
-            <div class="kurs-schedule-badge">2× Woche</div>
-            <div class="kurs-schedule-desc">Gezieltes Training à 15–20 Min für Kraft und Kapazität von Fuß, Wade und Unterschenkel</div>
-          </div>
-          <div class="kurs-schedule-item">
-            <div class="kurs-schedule-badge muted">6 Monate</div>
-            <div class="kurs-schedule-desc">Zugriff auf alle Inhalte — damit die neuen Gewohnheiten auch nach dem Kurs weiterleben</div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <p className="mt-8 max-w-2xl text-xl leading-9 text-black/65">
+              Modernes funktionelles Fußtraining für mehr Stabilität, Balance und Bewegungsvertrauen im Alltag — nach wissenschaftlichem Vorbild.
+            </p>
 
-    <div class="container--wide">
-      <div class="drei-saeulen fade-in">
-        <div class="saeule">
-          <div class="saeule-num">01</div>
-          <div class="saeule-title">Mobilisieren</div>
-          <div class="saeule-desc">Der Fuß wird vorbereitet, bewegt und aktiviert. Gelenke in Bewegung, Sensorik einschalten, Nervensystem auf Training vorbereiten.</div>
-        </div>
-        <div class="saeule">
-          <div class="saeule-num">02</div>
-          <div class="saeule-title">Kontrollieren</div>
-          <div class="saeule-desc">Der wichtigste Baustein. Balance, Stabilität und Bewegungsvertrauen werden gezielt trainiert. Das Nervensystem lernt, Störungen aktiv auszugleichen.</div>
-        </div>
-        <div class="saeule">
-          <div class="saeule-num">03</div>
-          <div class="saeule-title">Kräftigen</div>
-          <div class="saeule-desc">Fuß, Wade und Unterschenkel werden belastbarer. Kraft liefert die Kapazität für dauerhaft stabile, sichere Bewegung.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div className="mt-12 grid gap-5">
+              {benefits.map((item) => (
+                <div key={item} className="flex items-center gap-4 font-semibold text-black/85">
+                  <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#006D7A]" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
 
-  <!-- ── FÜR WEN ────────────────────────────────────────── -->
-  <section id="furwen" class="section">
-    <div class="container">
-      <div class="label">Für wen der Kurs gemacht ist</div>
-      <h2 style="margin-bottom: 52px;">Für Menschen, die sich<br>langfristig stabil fühlen wollen.</h2>
-      <div class="furwen-layout">
-        <div>
-          <ul class="furwen-checks fade-in">
-            <li class="furwen-check"><span class="furwen-check-mark"></span>Du hast das Gefühl, dass Stabilität und Balance nicht mehr ganz selbstverständlich sind</li>
-            <li class="furwen-check"><span class="furwen-check-mark"></span>Du möchtest präventiv etwas für deinen Körper tun — bevor Probleme größer werden</li>
-            <li class="furwen-check"><span class="furwen-check-mark"></span>Du willst dich wieder sicherer bewegen</li>
-            <li class="furwen-check"><span class="furwen-check-mark"></span>Du suchst funktionelles Training statt Wellness-Gymnastik</li>
-            <li class="furwen-check"><span class="furwen-check-mark"></span>Du möchtest Füße und Waden gezielt stärken</li>
-            <li class="furwen-check"><span class="furwen-check-mark"></span>Du willst deinen Körper langfristig belastbar halten</li>
-          </ul>
-        </div>
-        <div class="furwen-sidebar fade-in">
-          <div class="furwen-sidebar-box">
-            <h4>Besonders geeignet für</h4>
-            <span class="furwen-tag">Erwachsene 40+</span>
-            <span class="furwen-tag">Beruflich aktive Menschen</span>
-            <span class="furwen-tag">Erste Stabilitätsprobleme</span>
-            <span class="furwen-tag">Aktive ältere Erwachsene</span>
-            <span class="furwen-tag">Gesundheitsbewusste</span>
-          </div>
-          <div style="background: var(--off-white); border: 1px solid var(--light-grey); padding: 28px 32px; border-radius: var(--radius);">
-            <p style="font-size: 14px; color: var(--mid-grey); max-width: none; margin-bottom: 0; line-height: 1.65;">Keine Vorerfahrung notwendig. Keine Geräte. Kein Fitnessstudio. Der Kurs ist bewusst so aufgebaut, dass du sofort beginnen kannst — unabhängig von deinem aktuellen Level.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="#investment" className="inline-flex justify-center rounded-sm bg-[#006D7A] px-9 py-5 text-sm font-bold uppercase tracking-[0.12em] text-white hover:bg-[#005C67]">
+                Zugang sichern →
+              </a>
+              <a href="#kurs" className="inline-flex justify-center rounded-sm border border-[#006D7A] px-9 py-5 text-sm font-bold uppercase tracking-[0.12em] text-[#006D7A] hover:bg-[#006D7A] hover:text-white">
+                Mehr erfahren
+              </a>
+            </div>
 
-  <!-- ── INVESTMENT ─────────────────────────────────────── -->
-  <section id="investment" class="section section--dark">
-    <div class="container">
-      <div class="investment-layout">
-        <div class="investment-left fade-in">
-          <div class="label label--light">Investition</div>
-          <h2>Einmalig. Dauerhaft wirksam.</h2>
-          <p>Stabilität, Balance und Bewegungsvertrauen — aufgebaut in 6 Wochen, genutzt für Jahre.</p>
-          <div class="price-display">
-            <div class="price-main">227 €</div>
-            <div class="price-note">einmalig · keine Folgekosten · 6 Monate Zugriff</div>
-          </div>
-          <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="cta-btn cta-btn--light" target="_blank" rel="noopener">
-            Jetzt starten
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <div class="guarantee">
-            <div class="guarantee-icon">🛡</div>
-            <div class="guarantee-text">
-              <strong>14 Tage Geld-zurück-Garantie</strong>
-              Wenn du innerhalb der ersten 14 Tage merkst, dass der Kurs nicht zu dir passt, bekommst du dein Geld unkompliziert zurück.
+            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs font-bold uppercase tracking-[0.16em] text-black/42">
+              <span>6 Wochen Kurs</span>
+              <span>6 Monate Zugriff</span>
+              <span>24/7 flexibel</span>
+              <span>Alle Endgeräte</span>
             </div>
           </div>
-          <div class="trust-logos">
-            <div class="trust-badge"><span class="trust-badge-icon">🔒</span> Sichere Zahlung via Digistore24</div>
+
+          <div className="relative">
+            <div className="aspect-[4/5] overflow-hidden rounded-[2.5rem] border border-black/10 bg-[#EDE4D8] shadow-[0_30px_80px_rgba(5,12,18,0.10)]">
+              <div className="flex h-full items-center justify-center p-10">
+                <div className="h-full w-full rounded-[2rem] border border-[#006D7A]/18 bg-[#F8F8F6]/55" />
+              </div>
+            </div>
           </div>
         </div>
-        <div class="fade-in">
-          <div class="investment-includes">
-            <h4>Du erhältst</h4>
-            <div class="include-item"><div class="include-dot"></div>6 Wochen strukturiertes funktionelles Fußtraining</div>
-            <div class="include-item"><div class="include-dot"></div>Sofortzugang zum gesamten Kursbereich</div>
-            <div class="include-item"><div class="include-dot"></div>24/7 Zugriff auf allen Endgeräten</div>
-            <div class="include-item"><div class="include-dot"></div>Videobasierte Übungen mit Übungsbeschreibungen</div>
-            <div class="include-item"><div class="include-dot"></div>Alltagstaugliche Routinen mit klarer Struktur</div>
-            <div class="include-item"><div class="include-dot"></div>Übungen mit anpassbaren Leistungsleveln</div>
-            <div class="include-item"><div class="include-dot"></div>6 Monate Zugriff auf alle Inhalte</div>
-            <div class="include-item"><div class="include-dot"></div>14 Tage Geld-zurück-Garantie</div>
+      </section>
+
+      <section id="warum" className="px-6 py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">Warum gezieltes Fußtraining</p>
+            <h2 className="font-heading mt-5 text-4xl font-semibold leading-tight tracking-[-0.015em] md:text-5xl">Viele trainieren Rücken, Beine und Arme — aber vergessen die Füße.</h2>
+            <p className="mt-6 text-lg leading-8 text-black/65">Der Fuß ist das erste Gelenk der Bewegungskette mit Bodenkontakt. Wenn Kraft, Kontrolle und Balance nachlassen, kann sich Bewegung unsicherer, schwerer und weniger belastbar anfühlen.</p>
+          </div>
+          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {problemItems.map((item) => (
+              <div key={item} className="rounded-3xl border border-black/10 bg-white p-7 shadow-sm">
+                <div className="flex items-center gap-4">
+                  <span className="h-px w-7 shrink-0 bg-[#006D7A]" />
+                  <p className="font-semibold text-black/78">{item}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ── FAQ ───────────────────────────────────────────── -->
-  <section id="faq" class="section">
-    <div class="container">
-      <div class="label">Häufige Fragen</div>
-      <h2 style="margin-bottom: 52px;">Alles, was du<br>wissen möchtest.</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Brauche ich Vorerfahrung?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Nein. Der Kurs ist bewusst so aufgebaut, dass du Schritt für Schritt starten kannst — unabhängig davon, ob du bereits trainierst oder erst beginnen möchtest. Die Übungen sind an unterschiedliche Leistungslevel anpassbar.</div>
+      <section className="bg-[#EDE4D8] px-6 py-32">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">Die Basis jeder Bewegung</p>
+            <h2 className="font-heading mt-5 text-4xl font-semibold leading-tight tracking-[-0.015em] md:text-5xl">Der Fuß ist der Anfang jeder Bewegung</h2>
+            <p className="mt-8 text-lg leading-8 text-[#4A4035]">Bei jedem Schritt arbeiten Fuß, Knie, Hüfte und unterer Rücken zusammen. Dem Fuß als erstem Gelenk der Bewegungskette mit Bodenkontakt kommt dabei eine besondere Bedeutung zu.</p>
+            <p className="mt-5 text-lg leading-8 text-[#4A4035]">Schwache oder schlecht kontrollierte Füße können die gesamte Kette beeinflussen. Deshalb kann sich eine bessere Fußfunktion auch auf das gesamte Bewegungsgefühl auswirken.</p>
+            <div className="mt-10 border-t border-[#006D7A]/40 pt-6 font-heading text-2xl font-semibold text-[#006D7A]">Starke Füße. Stabiler Körper.</div>
+          </div>
+          <div className="rounded-[2rem] border border-[#D4C4B1] bg-[#F8F8F6]/65 p-8">
+            <div className="mb-8 text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">Symbolische Grafik</p>
+              <h3 className="font-heading mt-3 text-2xl font-semibold">Fuß als Fundament der Bewegungskette</h3>
+            </div>
+            <div className="grid gap-4">
+              {[
+                ['01', 'Fuß & Sprunggelenk', 'Erstkontakt · Fundament · Basis', true],
+                ['02', 'Knie', 'Übertragung · Ausrichtung'],
+                ['03', 'Hüfte', 'Stabilität · Kraftübertragung'],
+                ['04', 'Unterer Rücken', 'Haltung · Gesamtkörperkontrolle'],
+              ].map(([num, title, sub, active]) => (
+                <div key={title} className={`flex items-center gap-5 border px-6 py-5 ${active ? 'border-[#006D7A] bg-[#006D7A] text-white' : 'border-black/10 bg-white text-[#050C12]'}`}>
+                  <div className="text-xs font-bold tracking-[0.18em] opacity-60">{num}</div>
+                  <div><div className="font-bold">{title}</div><div className="text-sm opacity-65">{sub}</div></div>
+                  {active && <div className="ml-auto rounded-full bg-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em]">Fokus</div>}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Brauche ich Geräte oder ein Fitnessstudio?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Nein. Das Training kann komplett zuhause ohne Geräte durchgeführt werden. Alles, was du brauchst, ist etwas Bodenplatz und optional eine Wand oder ein Stuhl zur Sicherheit.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Wie viel Zeit brauche ich pro Woche?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Die tägliche Routine dauert weniger als 5 Minuten. Zusätzlich gibt es 2 gezielte Trainingseinheiten pro Woche mit jeweils ca. 15–20 Minuten. Das macht insgesamt unter einer Stunde Gesamttraining pro Woche.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Ist der Kurs auch für ältere Menschen geeignet?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Ja. Die Übungen sind an unterschiedliche Leistungslevel anpassbar und können individuell vereinfacht oder gesteigert werden. Es gibt immer eine sichere Grundoption mit Haltemöglichkeit.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Wann merke ich erste Unterschiede?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Viele Menschen bemerken relativ schnell mehr Wahrnehmung, Stabilität und Kontrolle bei Bewegung. Langfristige Veränderungen entstehen vor allem durch regelmäßige Umsetzung im Alltag — das ist auch der Grund, warum der Kurs auf kurze, tägliche Einheiten setzt.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Wie lange habe ich Zugriff auf den Kurs?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Du erhältst 6 Monate Zugriff auf alle Kursinhalte — auf allen Endgeräten, 24/7 verfügbar. So bleibt dir genug Zeit, die Routinen wirklich zu verinnerlichen.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Gilt die Geld-zurück-Garantie wirklich bedingungslos?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Ja. Wenn du innerhalb der ersten 14 Tage merkst, dass der Kurs nicht zu dir passt, bekommst du dein Geld unkompliziert zurück — ohne Wenn und Aber. Die Zahlung läuft sicher über Digistore24.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ── FINAL CTA ──────────────────────────────────────── -->
-  <section id="finalcta">
-    <div class="container finalcta-content">
-      <div class="label label--light" style="display: block; text-align: center;">Jetzt beginnen</div>
-      <h2>Bewegung sollte sich stabil, sicher und selbstverständlich anfühlen.</h2>
-      <p>Genau dabei soll dieser Kurs helfen. Mit modernem funktionellem Fußtraining nach wissenschaftlichem Vorbild.</p>
-      <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="cta-btn" target="_blank" rel="noopener">
-        Einfach loslegen
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="finalcta-pills">
-        <div class="finalcta-pill">Stabilität</div>
-        <div class="finalcta-pill">Balance</div>
-        <div class="finalcta-pill">Kontrolle</div>
-        <div class="finalcta-pill">Belastbarkeit</div>
-        <div class="finalcta-pill">Bewegungsvertrauen</div>
-      </div>
-    </div>
-  </section>
+      <section id="wissenschaft" className="bg-[#050C12] px-6 py-36 text-white">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-4xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#D4C4B1]">Wissenschaftlicher Ansatz</p>
+            <h2 className="font-heading mt-6 text-4xl font-bold leading-[1.18] tracking-[-0.01em] md:text-5xl lg:text-6xl">
+              Modernes Fußtraining setzt auf andere Hebel als gedacht.
+            </h2>
+          </div>
 
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
-  <footer>
-    <div class="container--wide">
-      <div class="footer-inner">
-        <div class="footer-logo">Starke Füße<span>.</span></div>
-        <div class="footer-links">
-          <a href="/impressum.html">Impressum</a>
-          <a href="/datenschutz.html">Datenschutz</a>
-          <a href="mailto:info@example.com">Kontakt</a>
+          <div className="mt-24 grid gap-10 md:grid-cols-2">
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
+              <p className="mb-6 text-xs font-bold uppercase tracking-[0.24em] text-white/35">Schwächere Evidenz</p>
+              {['Fußgewölbe wieder aufbauen', 'Fehlstellungen korrigieren', 'Hallux wegtrainieren', 'Passive Mobilisationsroutinen'].map((item) => <div key={item} className="border-b border-white/10 py-4 text-white/55 last:border-0">• {item}</div>)}
+            </div>
+            <div className="rounded-[2rem] border border-[#006D7A]/70 bg-[#006D7A]/20 p-8">
+              <p className="mb-6 text-xs font-bold uppercase tracking-[0.24em] text-[#00A1AF]">Stärkere Evidenz</p>
+              {['Balance-Training', 'Funktionelle Stabilität', 'Neuromuskuläre Kontrolle', 'Gezieltes Krafttraining', 'Alltagsnahe Bewegung'].map((item) => <div key={item} className="flex items-center gap-3 border-b border-[#006D7A]/30 py-4 text-white last:border-0"><span className="text-[#00A1AF] text-lg font-bold">✓</span><span>{item}</span></div>)}
+            </div>
+          </div>
+          <div className="mt-20">
+            <h3 className="font-heading max-w-5xl text-2xl font-bold leading-snug md:text-3xl">Balance ist keine reine Kraftfrage.<br />Balance ist eine Fähigkeit des Nervensystems — und sie lässt sich gezielt trainieren.</h3>
+          </div>
         </div>
-        <div class="footer-copy">© 2026 · Alle Rechte vorbehalten</div>
-      </div>
-    </div>
-  </footer>
+      </section>
 
-  <script>
-    // Nav scroll effect
-    const nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
+      <section className="px-6 py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">Kursaufbau</p>
+            <h2 className="font-heading mt-5 text-4xl font-semibold leading-tight tracking-[-0.015em] md:text-5xl">Strukturierter Aufbau für starke Füße.</h2>
+          </div>
+          </div>
+      </section>
 
-    // FAQ toggle
-    function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    }
+      <section id="kurs" className="px-6 py-24">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[2rem] bg-white p-8 shadow-xl shadow-black/5 lg:sticky lg:top-28 lg:self-start">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">So funktioniert der Kurs</p>
+            <h2 className="font-heading mt-5 text-4xl font-semibold tracking-[-0.015em] md:text-5xl">6 Wochen. Klarer Aufbau. Realistisch umsetzbar.</h2>
+            <p className="mt-5 text-lg leading-8 text-black/65">Der Kurs kombiniert eine kurze tägliche Routine mit zwei gezielten Trainingseinheiten pro Woche. Kein kompliziertes System. Kein Gerätezwang.</p>
+            <div className="mt-7 grid gap-3 text-black/75">
+              {['6-Wochen-Onlinekurs', 'Tägliche Mini-Routine unter 5 Minuten', '2x pro Woche gezieltes Training à 15–20 Minuten', '24/7 auf allen Endgeräten abrufbar', 'Zuhause ohne Fitnessstudio und ohne Geräte'].map((item) => <div key={item}>✓ {item}</div>)}
+            </div>
+          </div>
+          <div className="rounded-[2rem] border border-black/10 bg-white px-6 py-4 md:px-9 md:py-6">
+            {weeks.map(([week, title, text]) => (
+              <div key={week} className="group relative grid cursor-pointer select-none gap-4 border-t border-black/10 px-5 py-6 transition-all duration-300 first:border-0 hover:-translate-y-1.5 hover:scale-[1.015] hover:rounded-3xl hover:bg-white hover:shadow-[0_30px_70px_rgba(5,12,18,0.12)] md:grid-cols-[120px_1fr] md:gap-8">
+                <span className="absolute left-0 top-6 h-[calc(100%-3rem)] w-1 rounded-full bg-[#006D7A] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#006D7A]">{week}</div>
+                <div><h3 className="font-heading text-xl font-semibold">{title}</h3><p className="mt-2 leading-7 text-black/65">{text}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-    // Scroll fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
-</body>
-</html>
+      <section className="px-6 py-32">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#0D1821] text-white">
+          <div className="grid lg:grid-cols-2">
+            <div className="p-8 md:p-14">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#D4C4B1]">Für wen?</p>
+              <h2 className="font-heading mt-5 text-4xl font-semibold tracking-[-0.015em] md:text-5xl">Für Menschen, die Bewegung langfristig stabiler machen wollen.</h2>
+              <p className="mt-6 text-lg leading-8 text-white/68">Der Kurs ist für gesundheitsbewusste Erwachsene, aktive Menschen 40+ und alle, die merken: Balance, Fußkraft und Bewegungsvertrauen sollten nicht dem Zufall überlassen werden.</p>
+            </div>
+            <div className="bg-[#050C12] p-8 md:p-14">
+              <div className="space-y-4">
+                {['Du möchtest dich sicherer und stabiler bewegen.', 'Du willst deine Füße sinnvoll trainieren.', 'Du suchst ein klares System statt zufälliger YouTube-Übungen.', 'Du willst präventiv etwas für Bewegungsqualität und Belastbarkeit tun.'].map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.055] p-4 text-white/78">→ {item}</div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="investment" className="px-6 py-36">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">Investment</p>
+          <h2 className="font-heading mt-5 text-4xl font-semibold leading-tight tracking-[-0.015em] md:text-5xl">Investiere in die Basis deiner Bewegung.</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-black/65">Modernes funktionelles Fußtraining für mehr Stabilität, Balance und Bewegungsvertrauen im Alltag.</p>
+          <div className="mx-auto mt-10 max-w-xl rounded-[2rem] border border-black/10 bg-white p-7 shadow-xl shadow-black/5">
+            <div className="flex items-baseline justify-center gap-2"><span className="font-heading text-6xl font-semibold tracking-tight">227 €</span><span className="text-black/50">inkl. MwSt.</span></div>
+            <div className="mt-7 grid gap-3 text-left text-black/75">
+              {['6-Wochen-Onlinekurs', 'Kurze tägliche Routine', '2 gezielte Trainingseinheiten pro Woche', '6 Monate Zugriff', '14 Tage Geld-zurück-Garantie'].map((item) => <div key={item}>✓ {item}</div>)}
+            </div>
+            <a href="#" className="mt-8 inline-flex w-full items-center justify-center rounded-sm bg-[#006D7A] px-6 py-4 font-bold text-white hover:bg-[#005C67]">Zugang sichern →</a>
+            <p className="mt-4 text-sm text-black/45">Sicher bezahlen. Sofortiger Zugriff nach Kauf.</p>
+            <p className="mt-3 text-sm font-medium text-[#006D7A]">Auch als Geschenk für Familie und Freunde geeignet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="px-6 pb-28 pt-10">
+        <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#006D7A]">FAQ</p>
+            <h2 className="font-heading mt-5 text-4xl font-semibold leading-tight tracking-[-0.015em] md:text-5xl">Häufige Fragen</h2>
+          </div>
+          <div className="mt-12 space-y-4">
+            {faqs.map(([q, a]) => (
+              <details key={q} className="rounded-3xl border border-black/10 bg-white p-6 open:shadow-lg open:shadow-black/5">
+                <summary className="cursor-pointer list-none text-lg font-bold">{q}</summary>
+                <p className="mt-4 leading-7 text-black/65">{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#050C12] px-6 py-28 text-white">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[680px] w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#006D7A]/12" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#006D7A]/10" />
+        <div className="relative mx-auto max-w-5xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#D4C4B1]">Jetzt beginnen</p>
+          <h2 className="font-heading mx-auto mt-7 max-w-4xl text-4xl font-bold leading-[1.16] tracking-[-0.015em] md:text-6xl">
+            Bewegung sollte sich stabil, sicher und selbstverständlich anfühlen.
+          </h2>
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-white/60">
+            Genau dabei soll dieser Kurs helfen. Mit modernem funktionellem Fußtraining nach wissenschaftlichem Vorbild.
+          </p>
+          <a href="#investment" className="mt-10 inline-flex rounded-sm bg-[#006D7A] px-10 py-5 text-sm font-bold uppercase tracking-[0.12em] text-white hover:bg-[#005C67]">
+            Zugang sichern →
+          </a>
+          <div className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-3">
+            {['Stabilität', 'Balance', 'Kontrolle', 'Belastbarkeit', 'Bewegungsvertrauen'].map((item) => (
+              <span key={item} className="rounded-full border border-white/12 bg-white/[0.05] px-5 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/45">{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 bg-[#050C12] px-6 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/35 md:flex-row md:items-center md:justify-between">
+          <p className="font-bold uppercase tracking-[0.14em]">Starke Füße.</p>
+          <div className="flex gap-5"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+          <p>© 2026 · Alle Rechte vorbehalten</p>
+        </div>
+      </footer>
+    </main>
+  );
+}
