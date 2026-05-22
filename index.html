@@ -74,6 +74,8 @@
     .nav-links a:hover { color: var(--petrol); }
     .nav-cta { font-family: var(--rh); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--petrol); color: #fff; padding: 11px 24px; border-radius: 3px; transition: background var(--tr); }
     .nav-cta:hover { background: var(--petrol-h); }
+    .nav-member { display: inline-flex; align-items: center; gap: 6px; font-family: var(--rh); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: rgba(0,0,0,0.42); transition: color var(--tr); }
+    .nav-member:hover { color: var(--petrol); }
 
     /* ── HERO ── */
     #hero { position: relative; overflow: hidden; padding: 80px 40px 100px; background: var(--off-white); }
@@ -85,7 +87,7 @@
     #hero h1 { color: var(--navy); margin-bottom: 26px; }
     #hero h1 span { color: var(--petrol); display: block; }
     .hero-sub { font-size: 18px; color: rgba(0,0,0,0.6); line-height: 1.75; max-width: 540px; margin-bottom: 44px; font-weight: 300; }
-    .hero-benefits { display: flex; flex-direction: column; gap: 13px; margin-bottom: 48px; }
+    .hero-benefits { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
     .hero-benefit { display: flex; align-items: center; gap: 14px; font-size: 16px; font-weight: 500; color: rgba(0,0,0,0.82); }
     .hero-benefit-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--petrol); flex-shrink: 0; }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
@@ -133,20 +135,24 @@
     .wiss-heading { max-width: 780px; margin-bottom: 72px; }
     .wiss-heading h2 { color: #fff; font-size: clamp(2rem, 4vw, 2.9rem); }
     .wiss-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 64px; }
-    .wiss-box { border-radius: var(--rad-lg); padding: 36px 40px; }
+    .wiss-box { border-radius: var(--rad-lg); padding: 36px 40px; transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease; }
     .wiss-box--no { border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.025); }
-    .wiss-box--yes { border: 1px solid rgba(0,109,122,0.65); background: rgba(0,109,122,0.18); }
+    .wiss-box--yes { border: 1px solid rgba(0,109,122,0.65); background: rgba(0,109,122,0.18); cursor: default; }
+    .wiss-box--yes:hover { background: rgba(0,109,122,0.28); border-color: rgba(0,161,175,0.9); transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,109,122,0.25); }
+    .wiss-box--yes:hover .wiss-item { color: #fff; }
+    .wiss-box--yes:hover .wiss-item::before { color: #fff; }
+    .wiss-box--yes:hover .wiss-box-label { color: #fff; }
     .wiss-box-label { font-family: var(--rh); font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 24px; }
     .wiss-box--no .wiss-box-label { color: rgba(255,255,255,0.3); }
-    .wiss-box--yes .wiss-box-label { color: var(--petrol-l); }
+    .wiss-box--yes .wiss-box-label { color: var(--petrol-l); transition: color 0.25s ease; }
     .wiss-item { font-size: 16px; padding: 11px 0; border-bottom: 1px solid; display: flex; align-items: center; gap: 12px; }
     .wiss-box--no .wiss-item { color: rgba(255,255,255,0.52); border-color: rgba(255,255,255,0.07); }
     .wiss-box--no .wiss-item:last-child { border: none; }
     .wiss-box--no .wiss-item::before { content: '×'; color: rgba(255,255,255,0.28); font-size: 14px; }
-    .wiss-box--yes .wiss-item { color: rgba(255,255,255,0.9); border-color: rgba(0,109,122,0.22); }
+    .wiss-box--yes .wiss-item { color: rgba(255,255,255,0.9); border-color: rgba(0,109,122,0.22); transition: color 0.25s ease; }
     .wiss-box--yes .wiss-item:last-child { border: none; }
-    .wiss-box--yes .wiss-item::before { content: '✓'; color: var(--petrol-l); font-size: 13px; font-weight: 700; }
-    .wiss-statement { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 56px; }
+    .wiss-box--yes .wiss-item::before { content: '✓'; color: var(--petrol-l); font-size: 13px; font-weight: 700; transition: color 0.25s ease; }
+    .wiss-source { display: inline-flex; align-items: center; gap: 8px; font-family: var(--rh); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.80); border: 1px solid rgba(255,255,255,0.35); padding: 7px 16px; border-radius: 20px; }
     .wiss-statement h3 { font-family: var(--rh); font-size: clamp(1.35rem, 2.5vw, 1.85rem); font-weight: 700; color: #fff; line-height: 1.38; max-width: 860px; margin-bottom: 18px; letter-spacing: -0.01em; }
     .wiss-source { display: inline-flex; align-items: center; gap: 8px; font-family: var(--rh); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.22); padding: 6px 14px; border-radius: 20px; }
     .wiss-source::before { content: '◎'; color: var(--petrol-l); font-size: 9px; }
@@ -190,7 +196,7 @@
     .furwen-statement-text { font-size: 17px; color: #3a3530; line-height: 1.65; font-weight: 400; }
     .furwen-note { background: #fff; border: 1px solid var(--lgrey); border-radius: var(--rad-lg); padding: 32px 40px; }
     .furwen-note-label { font-family: var(--rh); font-size: 10px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--petrol); margin-bottom: 12px; }
-    .furwen-note-text { font-size: 16px; color: #4A4035; line-height: 1.72; font-weight: 300; max-width: 680px; }
+    .furwen-note-text { font-size: 16px; color: rgba(0,0,0,0.72); line-height: 1.72; font-weight: 400; max-width: 680px; }
 
     /* ── INVESTMENT — refined, not SaaS ── */
     #investment { padding: 120px 40px; background: var(--off-white); }
@@ -198,6 +204,13 @@
     .investment-inner > .lbl { display: block; }
     .investment-inner > h2 { color: var(--navy); margin-bottom: 14px; }
     .investment-sub { font-size: 18px; color: rgba(0,0,0,0.55); margin: 0 auto 48px; max-width: 480px; line-height: 1.72; font-weight: 300; }
+    .price-badge {
+      display: inline-block; margin-bottom: 16px;
+      background: var(--petrol); color: #fff;
+      font-family: var(--rh); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 20px;
+    }
     .price-card { background: #fff; border: 1px solid var(--lgrey); border-radius: var(--rad-lg); padding: 52px 48px; box-shadow: 0 8px 40px rgba(5,12,18,0.06); text-align: left; }
     .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 36px; }
     .price-big { font-family: var(--rh); font-size: 4rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); line-height: 1; }
@@ -246,8 +259,42 @@
     .fade { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .fade.in { opacity: 1; transform: none; }
 
+    /* ── ÜBER MICH ── */
+    #ueber-mich { background: var(--off-white); padding: 120px 40px; border-bottom: 1px solid var(--lgrey); }
+    .ueber-inner { max-width: 860px; margin: 0 auto; }
+    .ueber-hook {
+      font-family: var(--rh); font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700; color: var(--navy); line-height: 1.2;
+      letter-spacing: -0.015em; margin-bottom: 52px;
+      padding-bottom: 40px; border-bottom: 1px solid var(--lgrey);
+    }
+    .ueber-hook span { color: var(--petrol); }
+    .ueber-body { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .ueber-text p {
+      font-size: 17px; color: rgba(0,0,0,0.62); line-height: 1.85;
+      max-width: none; margin-bottom: 22px; font-weight: 300;
+    }
+    .ueber-text p:last-child { margin-bottom: 0; }
+    .ueber-text p strong { font-weight: 700; color: var(--text); font-family: var(--rh); }
+    .ueber-text p em { font-style: italic; color: rgba(0,0,0,0.5); }
+    .ueber-aside { display: flex; flex-direction: column; gap: 20px; }
+    .ueber-photo {
+      aspect-ratio: 3/4; border-radius: var(--rad-lg);
+      background: var(--sand-bg); border: 1px solid var(--lgrey);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ueber-photo-placeholder { font-family: var(--rh); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sand); opacity: 0.7; }
+    .ueber-credentials { background: var(--cream); border-radius: var(--rad-lg); padding: 28px 32px; border: 1px solid var(--lgrey); }
+    .ueber-credentials-label { font-family: var(--rh); font-size: 10px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--petrol); margin-bottom: 16px; }
+    .ueber-credential { font-size: 15px; color: rgba(0,0,0,0.65); padding: 8px 0; border-bottom: 1px solid var(--lgrey); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+    .ueber-credential:last-child { border: none; padding-bottom: 0; }
+    .ueber-credential::before { content: '—'; color: var(--petrol); flex-shrink: 0; opacity: 0.7; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
+      .ueber-body { grid-template-columns: 1fr; gap: 48px; }
+      .ueber-aside { flex-direction: row; flex-wrap: wrap; }
+      .ueber-photo { flex: 1; min-width: 200px; aspect-ratio: 1/1; }
       .hero-inner, .kette-inner, .kurs-inner { grid-template-columns: 1fr; gap: 48px; }
       .hero-image { aspect-ratio: 16/9; max-width: 560px; }
       .wiss-boxes { grid-template-columns: 1fr; }
@@ -260,15 +307,67 @@
       .nav-links { display: none; }
       nav .nav-inner { padding: 16px 24px; }
     }
+
     @media (max-width: 640px) {
-      h1 { font-size: 2.5rem; } h2 { font-size: 1.9rem; }
-      .problem-grid { grid-template-columns: 1fr; }
-      #hero, #warum, #kette, #wissenschaft, #kurs, #furwen, #investment, #faq, #finalcta { padding-left: 20px; padding-right: 20px; }
-      .hero-btns { flex-direction: column; }
+      /* Typography — larger, more readable */
+      body { font-size: 18px; line-height: 1.82; }
+      h1 { font-size: 2.6rem; line-height: 1.1; }
+      h2 { font-size: 2rem; line-height: 1.15; }
+      h3 { font-size: 1.25rem; }
+      p  { font-size: 17px; line-height: 1.82; }
+
+      /* Contrast improvements */
+      .grey, p { color: #525960; }
+      .warum-center p { color: rgba(0,0,0,0.72); }
+      .hero-benefit { color: rgba(0,0,0,0.88); font-size: 17px; }
+      .week-text { color: rgba(0,0,0,0.68); font-size: 16px; }
+      .furwen-statement-text { font-size: 17px; color: #2a2520; }
+      .wiss-item { font-size: 17px; }
+      .wiss-box--no .wiss-item { color: rgba(255,255,255,0.72); }
+      .ueber-text p { font-size: 17px; color: rgba(0,0,0,0.75); }
+      .kurs-check { font-size: 16px; color: rgba(0,0,0,0.82); }
+      .price-include { font-size: 17px; color: rgba(0,0,0,0.82); }
+      details p { font-size: 17px; color: rgba(0,0,0,0.72); }
+      summary { font-size: 17px; }
+
+      /* Layout */
+      #hero { padding: 60px 20px 72px; }
+      #warum, #kette, #wissenschaft, #kurs, #furwen, #investment, #faq, #finalcta, #ueber-mich { padding-left: 20px; padding-right: 20px; padding-top: 80px; padding-bottom: 80px; }
+      .hero-btns { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .btn { width: 100%; justify-content: center; padding: 20px 32px; font-size: 15px; }
       .price-card { padding: 36px 24px; }
       .price-big { font-size: 3.2rem; }
       .week-item { grid-template-columns: 1fr; gap: 6px; }
       .furwen-note { padding: 24px; }
+      .problem-grid { grid-template-columns: 1fr; gap: 10px; }
+      .problem-text { font-size: 16px; }
+      .wiss-box { padding: 28px 24px; }
+      .wiss-heading h2 { font-size: 2rem; }
+      .kurs-sticky { padding: 28px 24px; }
+      .price-note { font-size: 14px; }
+      .guarantee-strip p { font-size: 15px; }
+      .guarantee-strip strong { font-size: 16px; }
+      .hero-trust { gap: 12px; font-size: 11px; }
+      .lbl { font-size: 11px; letter-spacing: 0.2em; }
+      .warum-symptoms { padding: 36px 24px; }
+      .warum-symptoms h3 { font-size: 1.2rem; }
+      .symptom-list li { font-size: 16px; }
+      .week-title { font-size: 17px; }
+      .week-label { font-size: 11px; }
+      .finalcta-pills { gap: 8px; }
+      .finalcta-pill { font-size: 11px; padding: 8px 14px; }
+      #finalcta h2 { font-size: 2rem; }
+      #finalcta p { font-size: 17px; }
+      .furwen-top p { font-size: 17px; }
+      .investment-sub { font-size: 17px; }
+      .ueber-hook { font-size: 1.5rem; }
+      .nav-member { display: none; }
+      .nav-cta { font-size: 12px; padding: 10px 18px; }
+    }
+
+    @media (max-width: 380px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.75rem; }
     }
   </style>
 </head>
@@ -284,7 +383,13 @@
       <a href="#kurs">Kurs</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="nav-cta" target="_blank" rel="noopener">Jetzt starten</a>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="/login" class="nav-member">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="4.5" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 12c0-2.485 2.462-4.5 5.5-4.5s5.5 2.015 5.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Mitglieder
+      </a>
+      <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="nav-cta" target="_blank" rel="noopener">Jetzt starten</a>
+    </div>
   </div>
 </nav>
 
@@ -298,17 +403,15 @@
         <div class="hero-eyebrow-text">6-Wochen-Onlinekurs · Wissenschaftlich fundiert</div>
       </div>
       <h1>Starke Füße.<span>Stabiler Körper.</span></h1>
-      <p class="hero-sub">Modernes funktionelles Fußtraining für mehr Stabilität, Balance und Bewegungsvertrauen im Alltag — nach wissenschaftlichem Vorbild.</p>
+      <p style="font-size:17px; color:rgba(0,0,0,0.78); letter-spacing:0.01em; margin-bottom:40px; line-height:1.7; font-weight:600; font-family:var(--rh);">In 6 Wochen zu mehr Kraft, Stabilität und Balance. Täglich nur 5 Minuten. Trainiere entspannt von Zuhause aus. Ohne Geräte. Ohne Fitnessstudio.</p>
       <div class="hero-benefits">
-        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Mehr Stabilität &amp; Balance im Alltag</div>
-        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Mehr Kontrolle &amp; Bewegungsvertrauen</div>
-        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Stärkere und belastbarere Füße</div>
-        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Kurze Routinen unter 5 Minuten</div>
-        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Komplett zuhause, ohne Geräte</div>
+        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Stärkere Basis für Knie, Hüfte und Rücken</div>
+        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Mehr Leichtigkeit bei allem was Bewegung braucht</div>
+        <div class="hero-benefit"><span class="hero-benefit-dot"></span>Das Gefühl, dem eigenen Körper wieder zu vertrauen</div>
       </div>
       <div class="hero-btns">
         <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="btn btn--primary" target="_blank" rel="noopener">Jetzt starten →</a>
-        <a href="#kurs" class="btn btn--outline">Mehr erfahren</a>
+        <a href="#kurs" style="font-family:var(--rh); font-size:13px; font-weight:600; letter-spacing:0.08em; color:rgba(0,0,0,0.4); text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:color 0.22s ease;" onmouseover="this.style.color='var(--petrol)'" onmouseout="this.style.color='rgba(0,0,0,0.4)'">Mehr erfahren →</a>
       </div>
       <div class="hero-trust">
         <span>6 Wochen Kurs</span>
@@ -387,6 +490,9 @@
     <div class="wiss-statement fade">
       <h3>Balance ist keine reine Kraftfrage. Balance ist eine Fähigkeit des Nervensystems — und sie lässt sich gezielt trainieren.</h3>
       <div class="wiss-source">Cochrane Review &amp; BJSM Meta-Analyse · Sherrington et al. 2019/2020</div>
+      <div style="margin-top: 36px;">
+        <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="btn btn--primary" target="_blank" rel="noopener">Jetzt starten →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -449,7 +555,7 @@
   <div class="furwen-inner">
     <div class="furwen-top fade">
       <div class="lbl">Für wen dieser Kurs gemacht ist</div>
-      <h2>Für Menschen, die ihre Gesundheit aktiv in die eigene Hand nehmen möchten.</h2>
+      <h2>Für Menschen, die ihre Gesundheit selbst in die Hand nehmen.</h2>
       <p>Die Füße als erstes Gelenk zu trainieren macht intuitiv Sinn. Dieser Kurs ist für Menschen, die das erkennen und eigenverantwortlich etwas für ihre Bewegungsqualität tun wollen.</p>
     </div>
     <div class="furwen-statements fade">
@@ -469,9 +575,10 @@
 <!-- INVESTMENT -->
 <section id="investment">
   <div class="investment-inner">
-    <div class="lbl">Investment</div>
+    <div class="lbl">Preis &amp; Zugang</div>
     <h2>Einmalig. Dauerhaft wirksam.</h2>
     <p class="investment-sub">Für eine starke Basis, auf der alles andere aufbaut.</p>
+    <div class="price-badge fade">Komplettzugang</div>
     <div class="price-card fade">
       <div class="price-row">
         <div class="price-big">227 €</div>
@@ -494,6 +601,37 @@
         <div>
           <strong>14 Tage Geld-zurück-Garantie</strong>
           <p>Wenn du innerhalb der ersten 14 Tage merkst, dass der Kurs nicht zu dir passt, bekommst du dein Geld unkompliziert zurück — ohne Wenn und Aber.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER MICH — Vertrauensanker vor dem Kauf -->
+<section id="ueber-mich">
+  <div class="ueber-inner">
+    <div class="ueber-hook fade">
+      Ich bin Trainer. Und manchmal braucht es einen persönlichen Grund, um wirklich tief zu graben.<br>
+      <span>Meiner war mein Papa.</span>
+    </div>
+    <div class="ueber-body">
+      <div class="ueber-text fade">
+        <p>Mein Papa hat einen Senk-Spreizfuß und Polyneuropathie. Polyneuropathie bedeutet: Die Nerven übertragen weniger Signale vom Fuß ans Gehirn. Das Gangbild wird unsicherer. Das Stehen unsicherer. Irgendwann hält man sich mehr fest. Geht weniger. Traut sich weniger.</p>
+        <p>Ich wollte wissen, was wirklich hilft. Also habe ich recherchiert. Mit dem Anspruch, die Evidenz wirklich zu verstehen.</p>
+        <p>Die Antwort war zunächst ernüchternd. Einen Senk oder Spreizfuß strukturell korrigieren? Biomechanische Fehlstellungen wegtrainieren? Die Wissenschaft ist hier deutlich vorsichtiger als viele Versprechen im Netz.</p>
+        <p>Aber genau das hat den Blick freigemacht für etwas viel Wichtigeres. Eine große Cochrane Analyse und Meta Analysen aus dem British Journal of Sports Medicine zeigen es klar: Egal wie der aktuelle Zustand ist, Kraft, Balance, Kontrolle und Stabilität lassen sich trainieren. Das Nervensystem lässt sich trainieren. Funktion lässt sich verbessern.</p>
+        <p><strong>Mein Name ist Lukas Manfred Heck.</strong> Dieser Kurs ist das Ergebnis dieser Recherche. Für alle, die sinnvoll trainieren wollen und die Grundlogik des Fußes so überzeugend finden wie ich. Unsere Füße tragen uns ein Leben lang. Sie verdienen unsere Aufmerksamkeit.</p>
+      </div>
+      <div class="ueber-aside fade">
+        <div class="ueber-photo">
+          <img src="/lukas_heck.JPG" alt="Lukas Manfred Heck" style="width:100%; height:100%; object-fit:cover; border-radius:var(--rad-lg);" />
+        </div>
+        <div class="ueber-credentials">
+          <div class="ueber-credentials-label">Qualifikationen</div>
+          <div class="ueber-credential">Sport-Reha-Trainer</div>
+          <div class="ueber-credential">Personal Trainer</div>
+          <div class="ueber-credential">Heilpraktiker</div>
+          <div class="ueber-credential">Bachelor-Arbeit über sensomotorisches Training</div>
         </div>
       </div>
     </div>
