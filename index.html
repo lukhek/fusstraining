@@ -31,20 +31,20 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--rb); background: var(--off-white); color: var(--text); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--rb); background: var(--off-white); color: var(--text); font-size: 19px; line-height: 1.78; -webkit-font-smoothing: antialiased; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
 
-    .lbl { display: inline-block; font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--petrol); margin-bottom: 18px; }
+    .lbl { display: inline-block; font-family: var(--rh); font-size: 12px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--petrol); margin-bottom: 18px; }
     .lbl--sand { color: var(--sand); }
     .lbl--faint { color: rgba(255,255,255,0.38); }
     .lbl--dark { color: rgba(0,0,0,0.42); }
 
     h1,h2,h3,h4 { font-family: var(--rh); font-weight: 700; line-height: 1.13; }
-    h1 { font-size: clamp(2.8rem, 6vw, 4.6rem); letter-spacing: -0.025em; }
-    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.015em; }
-    h3 { font-size: 1.2rem; font-weight: 600; }
-    p  { color: var(--grey); font-size: 17px; line-height: 1.8; max-width: 680px; }
+    h1 { font-size: clamp(2.9rem, 6vw, 4.8rem); letter-spacing: -0.025em; }
+    h2 { font-size: clamp(2.1rem, 4vw, 3.1rem); letter-spacing: -0.015em; }
+    h3 { font-size: 1.3rem; font-weight: 600; }
+    p  { color: var(--grey); font-size: 18px; line-height: 1.82; max-width: 680px; }
 
     /* ── BUTTONS ── */
     .btn {
@@ -86,9 +86,9 @@
     .hero-eyebrow-text { font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--petrol); }
     #hero h1 { color: var(--navy); margin-bottom: 26px; }
     #hero h1 span { color: var(--petrol); display: block; }
-    .hero-sub { font-size: 18px; color: rgba(0,0,0,0.6); line-height: 1.75; max-width: 540px; margin-bottom: 44px; font-weight: 300; }
+    .hero-sub { font-size: 19px; color: rgba(0,0,0,0.6); line-height: 1.75; max-width: 540px; margin-bottom: 44px; font-weight: 300; }
     .hero-benefits { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
-    .hero-benefit { display: flex; align-items: center; gap: 14px; font-size: 16px; font-weight: 500; color: rgba(0,0,0,0.82); }
+    .hero-benefit { display: flex; align-items: center; gap: 14px; font-size: 17px; font-weight: 500; color: rgba(0,0,0,0.82); }
     .hero-benefit-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--petrol); flex-shrink: 0; }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
     .hero-trust { display: flex; flex-wrap: wrap; gap: 22px; font-family: var(--rh); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(0,0,0,0.38); }
@@ -101,12 +101,12 @@
     .warum-center { text-align: center; max-width: 700px; margin: 0 auto 64px; }
     .warum-center h2 { color: var(--navy); margin-bottom: 20px; }
     /* Rewritten: empowering, not finger-pointing */
-    .warum-center p { margin: 0 auto; font-size: 18px; color: rgba(0,0,0,0.6); max-width: none; font-weight: 300; line-height: 1.8; }
+    .warum-center p { margin: 0 auto; font-size: 19px; color: rgba(0,0,0,0.6); max-width: none; font-weight: 300; line-height: 1.8; }
     .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 1280px; margin: 0 auto; }
     .problem-card { border-radius: var(--rad-lg); border: 1px solid rgba(0,0,0,0.12); background: #fff; padding: 26px 28px; box-shadow: 0 1px 4px rgba(5,12,18,0.05); }
     .problem-card-inner { display: flex; align-items: center; gap: 14px; }
     .problem-line { width: 24px; height: 1px; background: var(--text); flex-shrink: 0; opacity: 0.35; }
-    .problem-text { font-size: 15px; font-weight: 500; color: rgba(0,0,0,0.68); }
+    .problem-text { font-size: 16px; font-weight: 500; color: rgba(0,0,0,0.68); }
 
     /* ── BEWEGUNGSKETTE — sand bg with breathing room ── */
     #kette { background: var(--sand-bg); padding: 120px 40px; }
@@ -145,7 +145,7 @@
     .wiss-box-label { font-family: var(--rh); font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 24px; }
     .wiss-box--no .wiss-box-label { color: rgba(255,255,255,0.3); }
     .wiss-box--yes .wiss-box-label { color: var(--petrol-l); transition: color 0.25s ease; }
-    .wiss-item { font-size: 16px; padding: 11px 0; border-bottom: 1px solid; display: flex; align-items: center; gap: 12px; }
+    .wiss-item { font-size: 17px; padding: 11px 0; border-bottom: 1px solid; display: flex; align-items: center; gap: 12px; }
     .wiss-box--no .wiss-item { color: rgba(255,255,255,0.52); border-color: rgba(255,255,255,0.07); }
     .wiss-box--no .wiss-item:last-child { border: none; }
     .wiss-box--no .wiss-item::before { content: '×'; color: rgba(255,255,255,0.28); font-size: 14px; }
@@ -170,7 +170,7 @@
     .kurs-sticky h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 10px; }
     .kurs-sticky > p { font-size: 15px; color: rgba(0,0,0,0.55); max-width: none; margin-bottom: 28px; line-height: 1.7; font-weight: 300; }
     .kurs-checklist { display: flex; flex-direction: column; gap: 11px; }
-    .kurs-check { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: rgba(0,0,0,0.72); line-height: 1.55; }
+    .kurs-check { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: rgba(0,0,0,0.72); line-height: 1.55; }
     .kurs-check::before { content: '✓'; color: var(--petrol); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
     .weeks-list { background: #fff; border-radius: var(--rad-lg); border: 1px solid var(--lgrey); overflow: hidden; }
     .week-item { position: relative; display: grid; grid-template-columns: 100px 1fr; gap: 24px; padding: 24px 28px; border-top: 1px solid rgba(0,0,0,0.07); transition: all 0.28s ease; }
@@ -179,8 +179,8 @@
     .week-item:hover { background: var(--cream); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(5,12,18,0.06); border-radius: var(--rad); }
     .week-item:hover::before { opacity: 1; }
     .week-label { font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--petrol); padding-top: 3px; }
-    .week-title { font-family: var(--rh); font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .week-text { font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.68; font-weight: 300; }
+    .week-title { font-family: var(--rh); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .week-text { font-size: 16px; color: rgba(0,0,0,0.55); line-height: 1.68; font-weight: 300; }
 
     /* ── FÜR WEN — warm, light, feminine ── */
     #furwen { padding: 120px 40px; background: var(--cream); }
@@ -193,7 +193,7 @@
     .furwen-statement:first-child { padding-top: 0; }
     .furwen-statement:last-child { border: none; padding-bottom: 0; }
     .furwen-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--petrol); flex-shrink: 0; margin-top: 8px; opacity: 0.7; }
-    .furwen-statement-text { font-size: 17px; color: #3a3530; line-height: 1.65; font-weight: 400; }
+    .furwen-statement-text { font-size: 18px; color: #3a3530; line-height: 1.65; font-weight: 400; }
     .furwen-note { background: #fff; border: 1px solid var(--lgrey); border-radius: var(--rad-lg); padding: 32px 40px; }
     .furwen-note-label { font-family: var(--rh); font-size: 10px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--petrol); margin-bottom: 12px; }
     .furwen-note-text { font-size: 16px; color: rgba(0,0,0,0.72); line-height: 1.72; font-weight: 400; max-width: 680px; }
@@ -217,7 +217,7 @@
     .price-vat { font-size: 15px; color: rgba(0,0,0,0.45); }
     .price-divider { height: 1px; background: var(--lgrey); margin-bottom: 32px; }
     .price-includes { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
-    .price-include { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(0,0,0,0.72); }
+    .price-include { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; color: rgba(0,0,0,0.72); }
     .price-include::before { content: '✓'; color: var(--petrol); font-weight: 700; flex-shrink: 0; }
     .price-note { margin-top: 14px; font-size: 13px; color: rgba(0,0,0,0.38); text-align: center; }
     .price-gift { margin-top: 8px; font-size: 14px; color: var(--petrol); text-align: center; font-weight: 500; }
@@ -231,9 +231,9 @@
     .faq-inner > h2 { color: var(--navy); margin-bottom: 52px; }
     details { border-radius: var(--rad-lg); border: 1px solid var(--lgrey); background: #fff; padding: 24px 28px; margin-bottom: 12px; transition: box-shadow var(--tr); }
     details[open] { box-shadow: 0 8px 32px rgba(5,12,18,0.05); }
-    summary { list-style: none; cursor: pointer; font-family: var(--rh); font-size: 16px; font-weight: 700; color: var(--text); }
+    summary { list-style: none; cursor: pointer; font-family: var(--rh); font-size: 17px; font-weight: 700; color: var(--text); }
     summary::-webkit-details-marker { display: none; }
-    details p { margin-top: 14px; font-size: 16px; color: rgba(0,0,0,0.6); line-height: 1.78; max-width: none; font-weight: 300; }
+    details p { margin-top: 14px; font-size: 17px; color: rgba(0,0,0,0.6); line-height: 1.78; max-width: none; font-weight: 300; }
 
     /* ── FINAL CTA ── */
     #finalcta { position: relative; overflow: hidden; background: var(--navy); padding: 128px 40px; text-align: center; color: #fff; }
@@ -321,10 +321,10 @@
       .warum-center p { color: rgba(0,0,0,0.72); }
       .hero-benefit { color: rgba(0,0,0,0.88); font-size: 17px; }
       .week-text { color: rgba(0,0,0,0.68); font-size: 16px; }
-      .furwen-statement-text { font-size: 17px; color: #2a2520; }
+      .furwen-statement-text { font-size: 18px; color: #2a2520; }
       .wiss-item { font-size: 17px; }
       .wiss-box--no .wiss-item { color: rgba(255,255,255,0.72); }
-      .ueber-text p { font-size: 17px; color: rgba(0,0,0,0.75); }
+      .ueber-text p { font-size: 18px; color: rgba(0,0,0,0.75); }
       .kurs-check { font-size: 16px; color: rgba(0,0,0,0.82); }
       .price-include { font-size: 17px; color: rgba(0,0,0,0.82); }
       details p { font-size: 17px; color: rgba(0,0,0,0.72); }
@@ -403,7 +403,7 @@
         <div class="hero-eyebrow-text">6-Wochen-Onlinekurs · Wissenschaftlich fundiert</div>
       </div>
       <h1>Starke Füße.<span>Stabiler Körper.</span></h1>
-      <p style="font-size:17px; color:rgba(0,0,0,0.78); letter-spacing:0.01em; margin-bottom:40px; line-height:1.7; font-weight:600; font-family:var(--rh);">In 6 Wochen zu mehr Kraft, Stabilität und Balance. Täglich nur 5 Minuten. Trainiere entspannt von Zuhause aus. Ohne Geräte. Ohne Fitnessstudio.</p>
+      <p style="font-size:17px; color:rgba(0,0,0,0.78); letter-spacing:0.01em; margin-bottom:40px; line-height:1.7; font-weight:600; font-family:var(--rh);">In 6 Wochen zu mehr Kraft, Stabilität und Balance. Täglich nur 5 Minuten. Bequem von Zuhause aus. Ohne Geräte. Ohne Fitnessstudio.</p>
       <div class="hero-benefits">
         <div class="hero-benefit"><span class="hero-benefit-dot"></span>Stärkere Basis für Knie, Hüfte und Rücken</div>
         <div class="hero-benefit"><span class="hero-benefit-dot"></span>Mehr Leichtigkeit bei allem was Bewegung braucht</div>
@@ -435,7 +435,7 @@
   <div class="warum-center fade">
     <div class="lbl">Warum gezieltes Fußtraining</div>
     <h2>Füße werden fast nie bewusst trainiert. Dabei tragen sie uns ein ganzes Leben.</h2>
-    <p>Mit der Zeit können unsere Füße an Kraft, Kontrolle und Sensibilität verlieren — und das merkt man zunächst kaum. Bis Bewegungen unsicherer werden, der Stand weniger stabil und das Vertrauen in den eigenen Körper leise schwindet.</p>
+    <p>Mit der Zeit verlieren unsere Füße an Kraft, Kontrolle und Sensibilität — und das merkt man zunächst kaum. Bis Bewegungen unsicherer werden, der Stand weniger stabil und das Vertrauen in den eigenen Körper leise schwindet.</p>
   </div>
   <div class="problem-grid fade">
     <div class="problem-card"><div class="problem-card-inner"><div class="problem-line"></div><div class="problem-text">Unsicherheit auf unebenem Boden</div></div></div>
@@ -559,11 +559,9 @@
       <p>Die Füße als erstes Gelenk zu trainieren macht intuitiv Sinn. Dieser Kurs ist für Menschen, die das erkennen und eigenverantwortlich etwas für ihre Bewegungsqualität tun wollen.</p>
     </div>
     <div class="furwen-statements fade">
-      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du möchtest dich wieder sicherer und stabiler bewegen — im Alltag, auf Treppen, unterwegs.</div></div>
-      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du willst präventiv etwas tun — bevor aus kleinen Unsicherheiten größere Probleme werden.</div></div>
-      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du suchst funktionelles Training mit klarem Sinn — nicht Wellness, nicht Zufall, sondern Wirkung.</div></div>
-      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du möchtest langfristig beweglich, belastbar und unabhängig bleiben.</div></div>
-      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du nimmst deine Gesundheit selbst in die Hand — und das ist genau die richtige Haltung dafür.</div></div>
+      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du möchtest stabil, kräftig und belastbar sein — im Alltag und beim Sport.</div></div>
+      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du willst wieder volles Vertrauen in deinen Körper und jede Bewegung spüren.</div></div>
+      <div class="furwen-statement"><div class="furwen-dot"></div><div class="furwen-statement-text">Du möchtest langfristig beweglich und unabhängig bleiben — auf jedem Untergrund.</div></div>
     </div>
     <div class="furwen-note fade">
       <div class="furwen-note-label">Einstieg &amp; Voraussetzungen</div>
@@ -656,10 +654,6 @@
       <p>Die tägliche Routine dauert ca. 5 Minuten. Zusätzlich gibt es 2 Trainingseinheiten pro Woche mit je 15–20 Minuten. Insgesamt unter einer Stunde pro Woche — realistisch in jeden Alltag integrierbar.</p>
     </details>
     <details>
-      <summary>Hilft der Kurs bei Schmerzen oder Fehlstellungen?</summary>
-      <p>Der Kurs ersetzt keine medizinische Behandlung. Der Fokus liegt auf Funktion: Kraft, Kontrolle, Balance und Bewegungsvertrauen. Bei akuten Beschwerden bitte zuerst ärztlichen Rat einholen.</p>
-    </details>
-    <details>
       <summary>Warum nicht einfach normale Fußgymnastik?</summary>
       <p>Weil dieser Kurs Fußkraft, Wadenkraft, Balance, Sprunggelenkskontrolle und alltagsnahe Bewegung sinnvoll kombiniert — nicht isolierte Einzelübungen. Das entspricht dem, was die aktuelle Forschung als wirksam ausweist.</p>
     </details>
@@ -671,6 +665,10 @@
       <summary>Gilt die Geld-zurück-Garantie wirklich?</summary>
       <p>Ja. Wenn du innerhalb der ersten 14 Tage merkst, dass der Kurs nicht zu dir passt, bekommst du dein Geld unkompliziert zurück — ohne Wenn und Aber. Die Zahlung läuft sicher über Digistore24.</p>
     </details>
+    <details>
+      <summary>Kann ich den Kurs auch machen, wenn ich Beschwerden habe?</summary>
+      <p>Der Kurs ersetzt keine medizinische Behandlung. Der Fokus liegt auf Funktion: Kraft, Kontrolle, Balance und Bewegungsvertrauen. Bei akuten Beschwerden bitte zuerst ärztlichen Rat einholen.</p>
+    </details>
   </div>
 </section>
 
@@ -679,7 +677,7 @@
   <div class="finalcta-inner">
     <div class="lbl lbl--sand" style="display:block;">Jetzt beginnen</div>
     <h2>Bewegung sollte sich stabil, sicher und selbstverständlich anfühlen.</h2>
-    <p>Genau dabei soll dieser Kurs helfen. Mit modernem funktionellem Fußtraining nach wissenschaftlichem Vorbild.</p>
+    <p>Genau das ist das Ziel dieses Kurses. Mit modernem funktionellem Fußtraining nach wissenschaftlichem Vorbild.</p>
     <a href="https://www.digistore24.com/product/YOUR_PRODUCT_ID" class="btn btn--primary" target="_blank" rel="noopener">Jetzt starten →</a>
     <div class="finalcta-pills">
       <span class="finalcta-pill">Stabilität</span>
