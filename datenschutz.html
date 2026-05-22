@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – Starke Fuesse</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --off-white: #F8F8F6;
+      --navy:      #050C12;
+      --petrol:    #006D7A;
+      --sand-bg:   #EDE4D8;
+      --grey:      #6B737A;
+      --lgrey:     #E4E0DC;
+      --text:      #101820;
+      --rh: 'Raleway', sans-serif;
+      --rb: 'Nunito Sans', sans-serif;
+      --rad: 0.75rem;
+      --tr: 0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--rb); background: var(--off-white); color: var(--text); font-size: 18px; line-height: 1.78; -webkit-font-smoothing: antialiased; }
+    a { color: var(--petrol); text-decoration: none; transition: opacity var(--tr); }
+    a:hover { opacity: 0.75; }
+
+    nav {
+      background: rgba(248,248,246,0.95); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--lgrey);
+      padding: 18px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--rh); font-weight: 800; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); text-decoration: none; }
+
+    main { max-width: 800px; margin: 0 auto; padding: 80px 40px 120px; }
+
+    .imp-header { margin-bottom: 64px; padding-bottom: 40px; border-bottom: 1px solid var(--lgrey); }
+    .imp-label { display: inline-block; font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--petrol); margin-bottom: 18px; }
+    .imp-header h1 { font-family: var(--rh); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); letter-spacing: -0.015em; line-height: 1.13; margin-bottom: 16px; }
+    .imp-header p { font-size: 16px; color: var(--grey); font-weight: 300; max-width: 580px; line-height: 1.75; }
+
+    .imp-toc { background: #fff; border: 1px solid var(--lgrey); border-radius: var(--rad); padding: 28px 32px; margin-bottom: 56px; }
+    .imp-toc-label { font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--petrol); margin-bottom: 16px; }
+    .imp-toc ol { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+    .imp-toc li { font-size: 15px; color: rgba(0,0,0,0.65); }
+    .imp-toc a { color: var(--petrol); font-weight: 500; }
+
+    .imp-section { margin-bottom: 52px; padding-bottom: 52px; border-bottom: 1px solid var(--lgrey); scroll-margin-top: 80px; }
+    .imp-section:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+    .imp-section-num { font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--petrol); margin-bottom: 10px; }
+    .imp-section h2 { font-family: var(--rh); font-size: 1.35rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; line-height: 1.25; }
+    .imp-section h3 { font-family: var(--rh); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; margin-top: 28px; }
+    .imp-section h3:first-of-type { margin-top: 0; }
+    .imp-section p { font-size: 16px; color: rgba(0,0,0,0.65); line-height: 1.82; max-width: none; margin-bottom: 16px; font-weight: 300; }
+    .imp-section p:last-child { margin-bottom: 0; }
+    .imp-section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .imp-section ul li { font-size: 16px; color: rgba(0,0,0,0.65); line-height: 1.72; font-weight: 300; }
+    .imp-section strong { font-weight: 600; color: rgba(0,0,0,0.82); }
+
+    .highlight-box { background: #fff; border: 1px solid var(--lgrey); border-left: 3px solid var(--petrol); border-radius: var(--rad); padding: 20px 24px; margin: 20px 0; }
+    .highlight-box p { font-size: 15px; margin: 0; }
+
+    .contact-card { background: #fff; border: 1px solid var(--lgrey); border-radius: var(--rad); padding: 28px 32px; margin-top: 16px; }
+    .contact-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--lgrey); font-size: 16px; }
+    .contact-row:last-child { border: none; padding-bottom: 0; }
+    .contact-label { font-family: var(--rh); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); min-width: 160px; padding-top: 2px; }
+    .contact-value { color: rgba(0,0,0,0.75); font-weight: 400; font-size: 16px; }
+
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 36px 40px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: var(--rh); font-weight: 800; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.3); transition: color var(--tr); }
+    .footer-links a:hover { color: rgba(255,255,255,0.65); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 640px) {
+      main { padding: 48px 20px 80px; }
+      nav { padding: 16px 20px; }
+      .contact-row { flex-direction: column; gap: 4px; }
+      .contact-label { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Starke Fuesse</a>
+  <a href="/" style="font-family:var(--rh); font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--petrol);">← Zurück</a>
+</nav>
+
+<main>
+  <div class="imp-header">
+    <div class="imp-label">Rechtliches</div>
+    <h1>Datenschutzerklärung</h1>
+    <p>Diese Datenschutzerklärung informiert dich gemäß Art. 13 DSGVO über die Verarbeitung personenbezogener Daten auf starkefuesse.de. Verantwortlicher im Sinne der DSGVO ist Lukas Manfred Heck (siehe Impressum).</p>
+  </div>
+
+  <div class="imp-toc">
+    <div class="imp-toc-label">Inhaltsverzeichnis</div>
+    <ol>
+      <li><a href="#s1">Verantwortlicher</a></li>
+      <li><a href="#s2">Hosting & technischer Betrieb</a></li>
+      <li><a href="#s3">Zugriffsdaten & Server-Logfiles</a></li>
+      <li><a href="#s4">Kontaktaufnahme</a></li>
+      <li><a href="#s5">Zahlungsabwicklung via Digistore24</a></li>
+      <li><a href="#s6">Cookies</a></li>
+      <li><a href="#s7">Deine Rechte als betroffene Person</a></li>
+      <li><a href="#s8">Datensicherheit</a></li>
+      <li><a href="#s9">Urheberrecht & Links</a></li>
+      <li><a href="#s10">Aktualität dieser Erklärung</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="imp-section" id="s1">
+    <div class="imp-section-num">01</div>
+    <h2>Verantwortlicher</h2>
+    <p>Verantwortlicher für die Datenverarbeitung auf dieser Website ist:</p>
+    <div class="contact-card">
+      <div class="contact-row"><div class="contact-label">Name</div><div class="contact-value">Lukas Manfred Heck</div></div>
+      <div class="contact-row"><div class="contact-label">Unternehmen</div><div class="contact-value">Heck Performance</div></div>
+      <div class="contact-row"><div class="contact-label">Adresse</div><div class="contact-value">Vogesenstraße 8, 77815 Bühl, Deutschland</div></div>
+      <div class="contact-row"><div class="contact-label">E-Mail</div><div class="contact-value"><a href="mailto:info@lukasheck.com">info@lukasheck.com</a></div></div>
+      <div class="contact-row"><div class="contact-label">Telefon</div><div class="contact-value"><a href="tel:+4975562869943">+49 7556 286 994 3</a></div></div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="imp-section" id="s2">
+    <div class="imp-section-num">02</div>
+    <h2>Hosting & technischer Betrieb</h2>
+    <p>Diese Website wird gehostet von <strong>Vercel Inc.</strong>, 340 Pine Street, Suite 701, San Francisco, CA 94104, USA. Vercel verarbeitet beim Aufruf der Website technisch notwendige Daten (IP-Adresse, Zeitstempel, aufgerufene Seiten) zur Bereitstellung des Dienstes.</p>
+    <p>Die Datenübertragung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Weitere Informationen findest du in der <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Datenschutzerklärung von Vercel</a>.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website).</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="imp-section" id="s3">
+    <div class="imp-section-num">03</div>
+    <h2>Zugriffsdaten & Server-Logfiles</h2>
+    <p>Beim Besuch dieser Website werden automatisch folgende Daten erhoben und in Server-Logfiles gespeichert:</p>
+    <ul>
+      <li>IP-Adresse (anonymisiert)</li>
+      <li>Datum und Uhrzeit des Abrufs</li>
+      <li>Aufgerufene URL</li>
+      <li>Browsertyp und Betriebssystem</li>
+      <li>Referrer-URL (zuvor besuchte Seite)</li>
+      <li>HTTP-Statuscode</li>
+    </ul>
+    <p>Diese Daten werden ausschließlich zur Sicherstellung des technischen Betriebs verwendet und nicht mit anderen Datenquellen zusammengeführt. Eine Speicherung erfolgt für maximal 30 Tage.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="imp-section" id="s4">
+    <div class="imp-section-num">04</div>
+    <h2>Kontaktaufnahme</h2>
+    <p>Wenn du uns per E-Mail kontaktierst, werden deine Angaben (E-Mail-Adresse, Name, Nachrichteninhalt) zur Bearbeitung deiner Anfrage verarbeitet und gespeichert. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    <p>Du kannst deine Einwilligung jederzeit für die Zukunft widerrufen. Die Daten werden gelöscht, sobald dein Anliegen abschließend bearbeitet ist.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="imp-section" id="s5">
+    <div class="imp-section-num">05</div>
+    <h2>Zahlungsabwicklung via Digistore24</h2>
+    <p>Der Kauf des Onlinekurses wird über <strong>Digistore24 GmbH</strong>, St.-Godehard-Straße 32, 31139 Hildesheim, abgewickelt. Digistore24 ist eigenständiger Verantwortlicher für die im Rahmen des Kaufprozesses erhobenen Daten.</p>
+    <p>Im Rahmen der Zahlungsabwicklung werden folgende Daten an Digistore24 übertragen:</p>
+    <ul>
+      <li>Name und E-Mail-Adresse</li>
+      <li>Rechnungsadresse</li>
+      <li>Zahlungsinformationen (je nach gewählter Zahlungsmethode)</li>
+    </ul>
+    <p>Die Datenverarbeitung erfolgt zur Vertragserfüllung und ist für den Kaufabschluss zwingend erforderlich. Weitere Informationen findest du in der <a href="https://www.digistore24.com/de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung von Digistore24</a>.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="imp-section" id="s6">
+    <div class="imp-section-num">06</div>
+    <h2>Cookies</h2>
+    <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind. Es werden keine Tracking- oder Marketing-Cookies eingesetzt.</p>
+    <div class="highlight-box">
+      <p>Soweit diese Website Analyse- oder Marketing-Tools einsetzt, wird darüber in dieser Erklärung gesondert informiert. Du wirst gegebenenfalls vor dem Einsatz um deine Einwilligung gebeten.</p>
+    </div>
+    <p>Du kannst Cookies in deinem Browser jederzeit deaktivieren. Beachte jedoch, dass dadurch einzelne Funktionen der Website eingeschränkt sein können.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO für technisch notwendige Cookies.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="imp-section" id="s7">
+    <div class="imp-section-num">07</div>
+    <h2>Deine Rechte als betroffene Person</h2>
+    <p>Gemäß DSGVO stehen dir folgende Rechte zu:</p>
+    <ul>
+      <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO): Du kannst Auskunft über die gespeicherten Daten verlangen.</li>
+      <li><strong>Berichtigungsrecht</strong> (Art. 16 DSGVO): Du kannst unrichtige Daten korrigieren lassen.</li>
+      <li><strong>Löschungsrecht</strong> (Art. 17 DSGVO): Du kannst die Löschung deiner Daten verlangen.</li>
+      <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO): Du kannst die Verarbeitung einschränken lassen.</li>
+      <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO): Du kannst deine Daten in einem gängigen Format erhalten.</li>
+      <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO): Du kannst der Verarbeitung widersprechen.</li>
+      <li><strong>Widerruf</strong>: Erteilte Einwilligungen kannst du jederzeit mit Wirkung für die Zukunft widerrufen.</li>
+    </ul>
+    <p>Zur Ausübung deiner Rechte wende dich an: <a href="mailto:info@lukasheck.com">info@lukasheck.com</a></p>
+    <p>Zudem hast du das Recht, dich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren. In Baden-Württemberg ist das der <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg</a>.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="imp-section" id="s8">
+    <div class="imp-section-num">08</div>
+    <h2>Datensicherheit</h2>
+    <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung personenbezogener Daten eine SSL/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du an dem Schlosssymbol in der Adresszeile deines Browsers.</p>
+    <p>Wir setzen technische und organisatorische Maßnahmen ein, um deine Daten gegen Verlust, Zerstörung, Verfälschung und unbefugten Zugriff zu schützen.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="imp-section" id="s9">
+    <div class="imp-section-num">09</div>
+    <h2>Urheberrecht & externe Links</h2>
+    <p>Alle auf dieser Website verwendeten Inhalte (Texte, Grafiken, Videos) sind urheberrechtlich geschützt. Eine Vervielfältigung oder Nutzung ohne ausdrückliche Genehmigung ist untersagt.</p>
+    <p>Diese Website enthält Links zu externen Webseiten. Für deren Inhalte sind ausschließlich die jeweiligen Betreiber verantwortlich. Zum Zeitpunkt der Verlinkung wurden keine rechtswidrigen Inhalte festgestellt. Eine dauerhafte Kontrolle ist ohne konkrete Anhaltspunkte nicht zumutbar.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="imp-section" id="s10">
+    <div class="imp-section-num">10</div>
+    <h2>Aktualität dieser Erklärung</h2>
+    <p>Diese Datenschutzerklärung hat den Stand <strong>Mai 2026</strong>. Wir behalten uns vor, sie bei Bedarf anzupassen, um stets den aktuellen rechtlichen Anforderungen zu entsprechen.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Starke Fuesse</div>
+    <div class="footer-links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="footer-copy">© 2026 · Alle Rechte vorbehalten</div>
+  </div>
+</footer>
+
+</body>
+</html>
