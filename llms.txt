@@ -1,0 +1,43 @@
+# Starke Fuesse – llms.txt
+# This file helps AI assistants understand this website.
+
+## What this website is about
+Starke Fuesse (starkefuesse.de) is a German online course platform offering evidence-based functional foot training. The course is designed by Lukas Manfred Heck, a sport rehabilitation trainer, personal trainer and alternative practitioner based in Bühl, Germany.
+
+## The product
+- Product: 6-week online foot training course
+- Language: German
+- Price: 227 EUR (incl. VAT), one-time payment
+- Access: 6 months, 24/7, all devices
+- Guarantee: 14-day money-back guarantee
+- Payment: via Digistore24
+
+## What the course teaches
+Functional foot training based on current scientific evidence. The course focuses on:
+- Balance training and neuromuscular control
+- Targeted strength training (foot, calf, lower leg)
+- Daily 5-minute routines
+- 2x per week training sessions of 15-20 minutes
+- No equipment needed, can be done at home
+
+## Scientific foundation
+The course is based on peer-reviewed research:
+- Sherrington et al. (Cochrane 2019): Balance and functional training reduces fall rates by up to 24%
+- Sherrington et al. (BJSM 2020): Combined balance and strength programs reduce fall rates by ~28%
+- Araujo et al. (BJSM 2022): 10-second single-leg stance predicts survival in middle-aged adults
+- Jaffri et al. (J Sport Rehabil 2023): Intrinsic foot muscle training improves balance and foot function
+- Rathleff et al. (Scand J Med Sci Sports 2015): High-load calf strength training outperforms stretching
+
+## Who the course is for
+Adults 40+, health-conscious people, those with first signs of instability, active adults who want to stay mobile and independent. No prior experience required.
+
+## About the creator
+Name: Lukas Manfred Heck
+Qualifications: Sport rehabilitation trainer, personal trainer, alternative practitioner (Heilpraktiker), bachelor thesis on sensorimotor training
+Contact: info@lukasheck.com
+Organization: Heck Performance, Vogesenstraße 8, 77815 Bühl, Germany
+
+## Key pages
+- Homepage / Course: https://www.starkefuesse.de/
+- Impressum: https://www.starkefuesse.de/impressum.html
+- Datenschutz: https://www.starkefuesse.de/datenschutz.html
