@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danke – Starke Fuesse</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Nunito+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --off-white: #F8F8F6;
+      --navy:      #050C12;
+      --petrol:    #006D7A;
+      --petrol-h:  #005C67;
+      --sand-bg:   #EDE4D8;
+      --grey:      #6B737A;
+      --lgrey:     #E4E0DC;
+      --cream:     #F2EDE8;
+      --text:      #101820;
+      --rh: 'Raleway', sans-serif;
+      --rb: 'Nunito Sans', sans-serif;
+      --rad: 0.75rem;
+      --rad-lg: 1.75rem;
+      --tr: 0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--rb); background: var(--off-white); color: var(--text); font-size: 18px; line-height: 1.78; -webkit-font-smoothing: antialiased; }
+    a { color: var(--petrol); text-decoration: none; transition: opacity var(--tr); }
+    a:hover { opacity: 0.75; }
+
+    /* NAV */
+    nav {
+      background: rgba(248,248,246,0.95); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--lgrey);
+      padding: 18px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--rh); font-weight: 800; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); text-decoration: none; }
+    .nav-member { display: inline-flex; align-items: center; gap: 6px; font-family: var(--rh); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: rgba(0,0,0,0.42); transition: color var(--tr); }
+    .nav-member:hover { color: var(--petrol); }
+
+    /* MAIN */
+    main { max-width: 720px; margin: 0 auto; padding: 80px 40px 120px; }
+
+    /* PHOTO */
+    .lukas-photo {
+      width: 100px; height: 100px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--lgrey);
+      display: block; margin: 0 auto 32px;
+      box-shadow: 0 4px 20px rgba(5,12,18,0.08);
+    }
+
+    /* HEADER */
+    .danke-header { text-align: center; margin-bottom: 52px; }
+    .danke-lbl { display: inline-block; font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--petrol); margin-bottom: 16px; }
+    .danke-header h1 { font-family: var(--rh); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--navy); letter-spacing: -0.015em; line-height: 1.2; margin-bottom: 20px; }
+
+    /* MESSAGE */
+    .danke-message { background: #fff; border: 1px solid var(--lgrey); border-radius: var(--rad-lg); padding: 44px 48px; margin-bottom: 32px; }
+    .danke-message p { font-size: 17px; color: rgba(0,0,0,0.68); line-height: 1.85; max-width: none; margin-bottom: 20px; font-weight: 300; }
+    .danke-message p:last-child { margin-bottom: 0; }
+    .danke-message .signature { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--lgrey); display: flex; align-items: center; gap: 14px; }
+    .danke-message .signature img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--lgrey); flex-shrink: 0; }
+    .danke-message .signature-name { font-family: var(--rh); font-size: 14px; font-weight: 700; color: var(--navy); display: block; }
+    .danke-message .signature-title { font-size: 13px; color: var(--grey); font-weight: 300; }
+
+    /* INFO BLOCK */
+    .danke-info { background: var(--cream); border: 1px solid var(--lgrey); border-radius: var(--rad-lg); padding: 36px 44px; margin-bottom: 32px; }
+    .danke-info-label { font-family: var(--rh); font-size: 11px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--petrol); margin-bottom: 24px; }
+    .danke-info-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--lgrey); font-size: 16px; color: rgba(0,0,0,0.68); line-height: 1.65; font-weight: 300; }
+    .danke-info-item:last-child { border: none; padding-bottom: 0; }
+    .danke-info-item::before { content: '✓'; color: var(--petrol); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* CTA BUTTON */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--rh); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 17px 38px; border-radius: 3px; background: var(--petrol); color: #fff;
+      transition: background var(--tr), transform var(--tr); margin: 24px 0 8px;
+      width: 100%; text-align: center;
+    }
+    .btn-primary:hover { background: var(--petrol-h); transform: translateY(-2px); opacity: 1; }
+
+    .danke-hint { font-size: 14px; color: rgba(0,0,0,0.45); text-align: center; line-height: 1.6; margin-top: 8px; }
+
+    /* CONTACT */
+    .danke-contact { text-align: center; padding-top: 24px; font-size: 15px; color: rgba(0,0,0,0.45); font-weight: 300; }
+    .danke-contact a { color: var(--petrol); }
+
+    /* FOOTER */
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 36px 40px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: var(--rh); font-weight: 800; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.3); transition: color var(--tr); }
+    .footer-links a:hover { color: rgba(255,255,255,0.65); opacity: 1; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 640px) {
+      main { padding: 48px 20px 80px; }
+      nav { padding: 16px 20px; }
+      .danke-message { padding: 28px 24px; }
+      .danke-info { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Starke Fuesse</a>
+  <a href="/login" class="nav-member">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7" cy="4.5" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M1.5 12c0-2.485 2.462-4.5 5.5-4.5s5.5 2.015 5.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    Mitglieder
+  </a>
+</nav>
+
+<main>
+
+  <img src="/lukas_heck.JPG" alt="Lukas Manfred Heck" class="lukas-photo" />
+
+  <div class="danke-header">
+    <div class="danke-lbl">Vielen Dank für dein Vertrauen</div>
+    <h1>Herzlichen Glückwunsch! Du hast einen wichtigen Schritt getan.</h1>
+  </div>
+
+  <div class="danke-info">
+    <div class="danke-info-label">Deine nächsten Schritte</div>
+    <div class="danke-info-item">Schau jetzt in dein E-Mail-Postfach. Du erhältst in Kürze eine E-Mail mit deinen persönlichen Zugangsdaten für den Mitgliederbereich.</div>
+    <div class="danke-info-item">Bitte prüfe auch deinen Spam-Ordner, falls die E-Mail nicht sofort im Posteingang erscheint.</div>
+    <div class="danke-info-item">Sobald du die E-Mail erhalten hast, kannst du dich mit deinen Zugangsdaten im Mitgliederbereich anmelden und direkt loslegen.</div>
+    <div class="danke-info-item">Den Login findest du jederzeit über unsere Startseite starkefuesse.de oben rechts unter "Mitglieder".</div>
+  </div>
+
+  <div class="danke-info" style="margin-top:24px;">
+    <div class="danke-info-label">Häufige Fragen nach dem Kauf</div>
+
+    <div style="padding:16px 0; border-bottom:1px solid var(--lgrey);">
+      <div style="font-family:var(--rh); font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Wie lange dauert es bis ich die E-Mail erhalte?</div>
+      <div style="font-size:15px; color:rgba(0,0,0,0.62); line-height:1.72; font-weight:300;">In der Regel erhältst du die E-Mail innerhalb weniger Minuten. In Ausnahmefällen kann es bis zu 24 Stunden dauern. Bitte prüfe auch deinen Spam-Ordner.</div>
+    </div>
+
+    <div style="padding:16px 0; border-bottom:1px solid var(--lgrey);">
+      <div style="font-family:var(--rh); font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Ich habe keine E-Mail erhalten. Was soll ich tun?</div>
+      <div style="font-size:15px; color:rgba(0,0,0,0.62); line-height:1.72; font-weight:300;">Prüfe zuerst deinen Spam-Ordner. Falls du nach 24 Stunden noch keine E-Mail erhalten hast, schreib mir einfach an <a href="mailto:info@lukasheck.com">info@lukasheck.com</a> und ich helfe dir weiter.</div>
+    </div>
+
+    <div style="padding:16px 0; border-bottom:1px solid var(--lgrey);">
+      <div style="font-family:var(--rh); font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Wo finde ich den Mitgliederbereich?</div>
+      <div style="font-size:15px; color:rgba(0,0,0,0.62); line-height:1.72; font-weight:300;">Den Login findest du jederzeit auf <a href="https://www.starkefuesse.de">www.starkefuesse.de</a> oben rechts über das Personen-Icon. Deine Zugangsdaten erhältst du per E-Mail nach dem Kauf.</div>
+    </div>
+
+    <div style="padding:16px 0; border-bottom:1px solid var(--lgrey);">
+      <div style="font-family:var(--rh); font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Wie lange habe ich Zugriff auf den Kurs?</div>
+      <div style="font-size:15px; color:rgba(0,0,0,0.62); line-height:1.72; font-weight:300;">Du hast 6 Monate Zugriff auf alle Inhalte, 24/7 auf allen Endgeräten. Eine Verlängerung ist jederzeit möglich.</div>
+    </div>
+
+    <div style="padding:16px 0;">
+      <div style="font-family:var(--rh); font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Ich möchte von der Geld-zurück-Garantie Gebrauch machen.</div>
+      <div style="font-size:15px; color:rgba(0,0,0,0.62); line-height:1.72; font-weight:300;">Kein Problem. Schreib mir innerhalb von 14 Tagen nach dem Kauf an <a href="mailto:info@lukasheck.com">info@lukasheck.com</a> und du bekommst dein Geld unkompliziert zurück.</div>
+    </div>
+  </div>
+
+  <div class="danke-contact">
+    Bei Fragen erreichst du mich unter <a href="mailto:info@lukasheck.com">info@lukasheck.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Starke Fuesse</div>
+    <div class="footer-links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="footer-copy">© 2026 · Alle Rechte vorbehalten</div>
+  </div>
+</footer>
+
+</body>
+</html>
