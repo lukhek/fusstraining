@@ -465,10 +465,16 @@
     injectFooterLink();
   }
 
+  // Delay: 1500ms — Nutzer sieht kurz den Content, Banner wirkt weniger aufdringlich
+  // Consent Mode v2 greift sofort (oben), nur die visuelle Anzeige ist verzögert
+  function delayedInit() {
+    setTimeout(init, 1500);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', delayedInit);
   } else {
-    init();
+    delayedInit();
   }
 
 })();
