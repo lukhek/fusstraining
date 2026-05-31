@@ -509,15 +509,7 @@
     .finalcta-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 48px; }
     .finalcta-pill { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.38); font-family: var(--rh); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 8px 18px; border-radius: 20px; }
 
-    /* ── FOOTER ── */
-    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 36px 40px; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-logo { font-family: var(--rh); font-weight: 800; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-    .footer-logo span { color: var(--petrol); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.28); transition: color var(--tr); }
-    .footer-links a:hover { color: rgba(255,255,255,0.6); }
-    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.18); }
+    
 
     /* ── FADE ── */
     .fade { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -657,6 +649,18 @@
       h1 { font-size: 2rem; }
       h2 { font-size: 1.65rem; }
     }
+  
+    /* FOOTER */
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.08); padding: 52px 40px 40px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    .footer-nav { display: flex; align-items: center; gap: 16px; }
+    .footer-nav a { font-family: var(--rh); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: rgba(255,255,255,0.85); transition: color var(--tr); text-decoration: none; }
+    .footer-nav a:hover { color: #fff; opacity: 1; }
+    .footer-divider { color: rgba(255,255,255,0.35); font-size: 13px; }
+    .footer-digistore { font-size: 11px; color: rgba(255,255,255,0.82); line-height: 1.65; font-weight: 300; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
+    .footer-digistore strong { font-weight: 600; color: #fff; }
+    .footer-disclaimer { font-size: 10.5px; color: rgba(255,255,255,0.72); line-height: 1.75; font-weight: 300; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.7); padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
   </style>
 </head>
 <body>
@@ -1249,12 +1253,23 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Starke Fuesse</div>
-    <div class="footer-links">
+
+    <div class="footer-nav">
       <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+      <span class="footer-divider">|</span>
+      <a href="/datenschutz.html">Datenschutzerklärung</a>
     </div>
-    <div class="footer-copy">© 2026 · Alle Rechte vorbehalten</div>
+
+    <div class="footer-digistore">
+      Der Kauf und die Abwicklung dieses Onlinekurses erfolgen über unseren offiziellen Reseller <strong>Digistore24 GmbH</strong>, Nordweg 28, 28259 Bremen.
+    </div>
+
+    <div class="footer-disclaimer">
+      Hinweis: Die auf dieser Website angebotenen Inhalte und Übungen dienen ausschließlich der allgemeinen Gesundheitsförderung und Prävention. Sie stellen keine medizinische Beratung, Diagnose oder Therapie dar und ersetzen nicht den Besuch bei einem Arzt oder Physiotherapeuten. Bitte konsultiere vor Beginn eines neuen Trainingsprogramms einen Arzt, insbesondere wenn du unter gesundheitlichen Beschwerden leidest.
+    </div>
+
+    <div class="footer-copy">© 2026 Lukas Heck – starkefuesse.de</div>
+
   </div>
 </footer>
 
