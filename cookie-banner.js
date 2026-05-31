@@ -129,7 +129,6 @@
     }
     /* Primär: Akzeptieren — rechts, auffällig */
     #sf-banner .sf-btn-accept {
-      order: 3;
       flex: 1;
       min-width: 140px;
       font-family: ${RH};
@@ -152,7 +151,6 @@
     }
     /* Ablehnen — links, dezent aber gleich groß */
     #sf-banner .sf-btn-decline {
-      order: 1;
       flex: 1;
       min-width: 120px;
       font-family: ${RH};
@@ -173,21 +171,23 @@
       border-color: #bbb;
       color: ${NAVY};
     }
-    /* Einstellungen — ganz dezent, in der Mitte */
+    /* Einstellungen — zentriert unter den Buttons */
+    #sf-banner .sf-settings-row {
+      text-align: center;
+      margin-top: 10px;
+    }
     #sf-banner .sf-btn-settings {
-      order: 2;
       font-family: ${RH};
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.06em;
-      color: rgba(0,0,0,0.35);
+      color: rgba(0,0,0,0.32);
       background: none;
       border: none;
       cursor: pointer;
       text-decoration: underline;
       text-underline-offset: 3px;
-      padding: 4px 6px;
-      white-space: nowrap;
+      padding: 2px 4px;
       transition: color 0.15s;
     }
     #sf-banner .sf-btn-settings:hover { color: ${PETROL}; }
@@ -305,7 +305,7 @@
       #sf-banner { padding: 20px 18px; bottom: 12px; border-radius: 1rem; }
       #sf-banner .sf-actions { flex-direction: column; }
       #sf-banner .sf-btn-accept,
-      #sf-banner .sf-btn-decline { min-width: 0; width: 100%; order: unset; }
+      #sf-banner .sf-btn-decline { min-width: 0; width: 100%; }
       #sf-banner .sf-btn-accept { order: -1; }
       #sf-modal .sf-box { padding: 28px 22px; }
       .sf-m-actions { flex-direction: column; }
@@ -383,8 +383,10 @@
     </div>
     <div class="sf-actions">
       <button class="sf-btn-decline" id="sf-decline">Ablehnen</button>
-      <button class="sf-btn-settings" id="sf-settings">Einstellungen</button>
       <button class="sf-btn-accept" id="sf-accept">Alle akzeptieren</button>
+    </div>
+    <div class="sf-settings-row">
+      <button class="sf-btn-settings" id="sf-settings">Einstellungen anpassen</button>
     </div>
   `;
 
