@@ -135,7 +135,7 @@
         },
         "offers": {
           "@type": "Offer",
-          "price": "197",
+          "price": "127",
           "priceCurrency": "EUR",
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
@@ -367,7 +367,6 @@
     #warum { padding: 120px 40px; background: var(--off-white); }
     .warum-center { text-align: center; max-width: 700px; margin: 0 auto 64px; }
     .warum-center h2 { color: var(--navy); margin-bottom: 20px; }
-    /* Rewritten: empowering, not finger-pointing */
     .warum-center p { margin: 0 auto; font-size: 19px; color: rgba(0,0,0,0.6); max-width: none; font-weight: 300; line-height: 1.8; }
     .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 1280px; margin: 0 auto; }
     .problem-card { border-radius: var(--rad-lg); border: 1px solid rgba(0,0,0,0.12); background: #fff; padding: 26px 28px; box-shadow: 0 1px 4px rgba(5,12,18,0.05); }
@@ -429,7 +428,6 @@
     .kurs-header { text-align: center; max-width: 640px; margin: 0 auto 80px; }
     .kurs-header h2 { color: var(--navy); margin-bottom: 16px; }
     .kurs-header p { margin: 0 auto; font-size: 17px; color: rgba(0,0,0,0.55); max-width: none; font-weight: 300; }
-    /* Fachbegriff-Entzauberung */
     .kurs-intro-note { display: inline-block; margin-top: 16px; font-size: 14px; color: rgba(0,0,0,0.42); font-style: italic; }
     .kurs-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
     .kurs-sticky-wrap { position: sticky; top: 100px; align-self: start; }
@@ -491,6 +489,8 @@
     .guarantee-strip { display: flex; align-items: flex-start; gap: 14px; margin-top: 24px; padding: 20px 22px; background: rgba(0,109,122,0.05); border: 1px solid rgba(0,109,122,0.18); border-radius: var(--rad); }
     .guarantee-strip strong { font-family: var(--rh); font-size: 14px; color: var(--text); display: block; margin-bottom: 4px; letter-spacing: 0.01em; }
     .guarantee-strip p { font-size: 14px; color: rgba(0,0,0,0.55); max-width: none; font-weight: 300; }
+    .payment-methods { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
+    .payment-methods img { height: 22px; width: auto; opacity: 0.9; }
 
     /* ── FAQ ── */
     #faq { padding: 40px 40px 112px; background: var(--off-white); }
@@ -1072,7 +1072,7 @@
     <div class="fade" style="margin-top:40px; background:rgba(0,109,122,0.06); border:1px solid rgba(0,109,122,0.2); border-radius:var(--rad-lg); padding:28px 36px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
       <div>
         <div style="font-family:var(--rh); font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--petrol); margin-bottom:6px;">Alles inklusive</div>
-        <div style="font-size:17px; color:var(--navy); font-weight:400;">6-Wochen-Kurs + alle drei Boni. Einmalig 197€. Kein Abo.</div>
+        <div style="font-size:17px; color:var(--navy); font-weight:400;">6-Wochen-Kurs + alle drei Boni. Einmalig 127€. Kein Abo.</div>
       </div>
       <a href="https://www.checkout-ds24.com/product/695407" class="btn btn--primary" target="_blank" rel="noopener">Jetzt starten →</a>
     </div>
@@ -1089,7 +1089,7 @@
     <div class="price-badge fade">Komplettzugang</div>
     <div class="price-card fade">
       <div class="price-row">
-        <div class="price-big">197 €</div>
+        <div class="price-big">127 €</div>
         <div class="price-vat">inkl. MwSt.</div>
       </div>
       <div class="price-divider"></div>
@@ -1103,7 +1103,13 @@
       </div>
       <a href="https://www.checkout-ds24.com/product/695407" class="btn btn--primary" style="width:100%;" target="_blank" rel="noopener">Jetzt starten →</a>
       <div class="price-note">Sicher bezahlen via Digistore24. Sofortiger Zugriff nach Kauf.</div>
-      <div class="price-note" style="margin-top:6px;">Ratenzahlung möglich: 3× 70€</div>
+      <div class="price-note" style="margin-top:6px;">Ratenzahlung möglich: 3× 45€</div>
+      <div class="payment-methods">
+        <span style="display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 12px; border:1px solid var(--lgrey); border-radius:5px; background:#fff; font-family:var(--rh); font-size:12px; font-weight:700; letter-spacing:0.02em; color:var(--grey);">PayPal</span>
+        <span style="display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 12px; border:1px solid var(--lgrey); border-radius:5px; background:#fff; font-family:var(--rh); font-size:12px; font-weight:800; font-style:italic; letter-spacing:0.02em; color:var(--grey);">VISA</span>
+        <span style="display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 12px; border:1px solid var(--lgrey); border-radius:5px; background:#fff; font-family:var(--rh); font-size:12px; font-weight:700; letter-spacing:0.02em; color:var(--grey);">Klarna</span>
+        <span style="display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 12px; border:1px solid var(--lgrey); border-radius:5px; background:#fff; font-family:var(--rh); font-size:11px; font-weight:700; letter-spacing:0.1em; color:var(--grey);">SEPA</span>
+      </div>
       <div class="price-gift">Auch als Geschenk für Familie und Freunde geeignet.</div>
       <div class="guarantee-strip">
         <span style="font-size:20px;flex-shrink:0;margin-top:2px;">🛡</span>
