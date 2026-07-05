@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/kurs-starten",
+      "destination": "https://www.checkout-ds24.com/redir/695407/lukasheck/googleads-juli26",
+      "permanent": false
+    }
+  ]
 }
