@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ==========================================================================
+   Theme "Lukas Heck" – Dark-Teal-Design von lukasheck.com auf Starke Füße
+   Wird NACH dem Seiten-CSS geladen und überschreibt nur Variablen + Details.
+   Entfernen = altes Design ist sofort wieder da.
+   ========================================================================== */
+
+:root {
+  /* Flächen */
+  --off-white: #0A191C;   /* Seitenhintergrund (bg) */
+  --cream:     #10272B;   /* Surface */
+  --sand-bg:   #10272B;
+  --sand-mid:  #12363A;
+  --sand:      #93A8A6;
+  --lgrey:     #23403F;   /* Linien */
+  --dark:      #061113;
+  --navy:      #E7EEEB;   /* war Überschriftenfarbe -> jetzt hell */
+  /* Text */
+  --text:      #E7EEEB;
+  --grey:      #93A8A6;
+  /* Akzent */
+  --petrol:    #43B8C1;
+  --petrol-h:  #6BCBD2;
+  --petrol-l:  #6BCBD2;
+  /* Typo + Form */
+  --rh: 'Raleway', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --rb: 'Raleway', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --rad: 8px;
+  --rad-lg: 14px;
+  --ls-surface: #10272B;
+  --ls-muted: #93A8A6;
+  --ls-fg: #E7EEEB;
+  --ls-deep: #061113;
+  --ls-on-accent: #04181B;
+  --ls-shadow: 0 1px 2px rgba(0,0,0,.3), 0 24px 60px -24px rgba(0,0,0,.6);
+  color-scheme: dark;
+}
+
+html { background: #0A191C; }
+body { background: var(--off-white); color: var(--ls-fg); font-weight: 400; font-variant-numeric: lining-nums; }
+:focus-visible { outline: 2px solid var(--petrol); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--petrol); color: var(--ls-on-accent); }
+
+/* ---------- Typografie ---------- */
+h1, h2, h3, h4 { font-weight: 400; letter-spacing: -.02em; line-height: 1.12; color: var(--ls-fg); text-wrap: balance; }
+h1 { font-weight: 300; }
+h1 span, h1 em, .ueber-hook span { font-style: normal; font-weight: 600; color: var(--petrol); }
+h3 { font-weight: 600; }
+p { color: var(--ls-muted); }
+
+.lbl, .hero-eyebrow-text, .danke-lbl, .week-label, .wiss-box-label, .furwen-note-label,
+.ueber-credentials-label, .kette-node-num, .hero-trust, .finalcta-pill, .wiss-source, .price-badge {
+  font-family: var(--mono) !important;
+  font-weight: 500 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase;
+}
+.lbl { color: var(--petrol); font-size: 12px; }
+.lbl--sand, .lbl--faint, .lbl--dark { color: var(--petrol); }
+.hero-eyebrow-line { background: var(--petrol); }
+
+/* ---------- Buttons (Pill-Stil) ---------- */
+.btn, .btn-primary, .nav-cta {
+  border-radius: 999px !important;
+  font-family: var(--rh);
+  font-weight: 600 !important;
+  letter-spacing: .01em !important;
+  text-transform: none !important;
+}
+.btn { font-size: 16px; padding: 15px 30px; min-height: 52px; }
+.nav-cta { font-size: 14px; padding: 10px 22px; }
+.btn--primary, .btn-primary, .nav-cta { background: var(--petrol); color: var(--ls-on-accent) !important; }
+.btn--primary:hover, .btn-primary:hover, .nav-cta:hover { background: var(--petrol-h); }
+.btn--outline { border: 1.5px solid var(--ls-fg); color: var(--ls-fg); background: transparent; }
+.btn--outline:hover { background: var(--ls-fg); color: var(--off-white); }
+
+/* ---------- Navigation ---------- */
+nav {
+  background: color-mix(in srgb, #0A191C 88%, transparent) !important;
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--lgrey) !important;
+}
+nav.scrolled { box-shadow: none; }
+.nav-logo { color: var(--ls-fg); font-weight: 700; letter-spacing: .32em; }
+.nav-logo span { color: var(--petrol); }
+.nav-links a, .nav-member { color: var(--ls-muted); font-weight: 500; text-transform: none; letter-spacing: .01em; font-size: 14px; }
+.nav-links a:hover, .nav-member:hover { color: var(--ls-fg); }
+
+/* ---------- Hero ---------- */
+#hero { background: var(--off-white); }
+.hero-radial { background: radial-gradient(60% 55% at 78% 30%, color-mix(in srgb, var(--petrol) 22%, transparent), transparent 70%); }
+#hero h1 { color: var(--ls-fg); }
+.hero-sub, .hero-benefit { color: var(--ls-fg) !important; }
+.hero-sub { font-weight: 300; }
+.hero-trust { color: var(--ls-muted) !important; }
+.hero-image { background: var(--ls-surface); border: 1px solid var(--lgrey); box-shadow: var(--ls-shadow); }
+.hero-image-inner { background: transparent; border-color: var(--lgrey); }
+.hero-benefit-dot { box-shadow: 0 0 14px color-mix(in srgb, var(--petrol) 80%, transparent); }
+
+/* ---------- Sektionen ---------- */
+#warum, #kurs, #investment, #faq, #testimonials, #ueber-mich { background: var(--off-white) !important; }
+#kette, #boni { background: var(--ls-surface) !important; }
+#furwen { background: var(--ls-surface); }
+#ueber-mich { border-bottom-color: var(--lgrey); }
+
+/* Dunkle Sektionen bleiben dunkel (statt navy) */
+#wissenschaft, #finalcta, footer { background: var(--ls-deep) !important; }
+#wissenschaft, #finalcta { border-top: 1px solid var(--lgrey); border-bottom: 1px solid var(--lgrey); }
+footer { border-top: 1px solid var(--lgrey); }
+#finalcta::before { border-color: color-mix(in srgb, var(--petrol) 25%, transparent); }
+#finalcta::after  { border-color: color-mix(in srgb, var(--petrol) 18%, transparent); }
+#finalcta .btn--primary, #finalcta .btn-primary { background: var(--ls-fg); color: var(--ls-deep) !important; }
+#finalcta .btn--primary:hover { background: #fff; }
+.finalcta-pill { color: var(--ls-muted); border-color: var(--lgrey); background: transparent; }
+.wiss-box--yes { background: color-mix(in srgb, var(--petrol) 14%, transparent); border-color: color-mix(in srgb, var(--petrol) 60%, transparent); }
+.wiss-box--yes:hover { box-shadow: 0 20px 48px -12px color-mix(in srgb, var(--petrol) 40%, transparent); }
+
+/* ---------- Karten / Flächen (vorher weiß) ---------- */
+.problem-card, .kurs-sticky, .weeks-list, .furwen-note, .price-card, details, .kette-node,
+.danke-message, .danke-info, .ueber-credentials, .ueber-photo,
+[style*="background:#fff"], [style*="background: #fff"] {
+  background: var(--ls-surface) !important;
+  border-color: var(--lgrey) !important;
+  box-shadow: var(--ls-shadow);
+}
+.kette-visual { background: color-mix(in srgb, var(--off-white) 60%, transparent); border-color: var(--lgrey); }
+.kette-node--active { background: var(--petrol) !important; border-color: var(--petrol) !important; }
+.kette-node--active .kette-node-num, .kette-node--active .kette-node-title, .kette-node--active .kette-node-sub { color: var(--ls-on-accent) !important; opacity: 1; }
+.kette-fokus { background: rgba(4,24,27,.2); color: var(--ls-on-accent); }
+.kette-slogan { border-top-color: color-mix(in srgb, var(--petrol) 40%, transparent); }
+.week-item { border-top-color: var(--lgrey); }
+.week-item:hover { background: #12363A; box-shadow: none; }
+.guarantee-strip { background: color-mix(in srgb, var(--petrol) 10%, transparent); border-color: color-mix(in srgb, var(--petrol) 30%, transparent); }
+.price-badge { background: var(--petrol); color: var(--ls-on-accent); font-size: 11px; }
+.price-big { color: var(--ls-fg); }
+.price-divider { background: var(--lgrey); }
+details[open] { box-shadow: var(--ls-shadow); }
+summary { color: var(--ls-fg); }
+.payment-methods img, [style*="height:26px"] { filter: none; }
+[style*="background:var(--sand-bg)"] { background: var(--ls-surface) !important; }
+[style*="rgba(0,109,122,0.0"] { background: color-mix(in srgb, var(--petrol) 12%, transparent) !important; border-color: color-mix(in srgb, var(--petrol) 30%, transparent) !important; }
+
+/* ---------- Fließtext (vorher rgba(0,0,0,x) / braun) ---------- */
+.warum-center p, .problem-text, .kurs-header p, .kurs-intro-note, .kurs-sticky > p, .kurs-check,
+.week-text, .furwen-top p, .furwen-statement-text, .furwen-note-text, .investment-sub, .price-vat,
+.price-include, .price-note, .guarantee-strip p, details p, .ueber-text p, .ueber-text p em,
+.ueber-credential, .kette-text p, .danke-message p, .danke-info-item, .danke-hint, .danke-contact,
+.signature-title,
+[style*="color:rgba(0,0,0"], [style*="color: rgba(0,0,0"], [style*="color:#4A4035"], [style*="color: #4A4035"] {
+  color: var(--ls-muted) !important;
+}
+.ueber-text p strong, .guarantee-strip strong, .week-title, .kurs-check strong { color: var(--ls-fg) !important; }
+.furwen-statement { border-bottom-color: var(--lgrey); }
+.problem-line { background: var(--ls-fg); }
+
+/* ---------- Rechtstexte (Impressum / Datenschutz) ---------- */
+main h1, main h2, main h3 { color: var(--ls-fg); }
+main p, main li, main td, main address { color: var(--ls-muted); }
+main a { color: var(--petrol); }
+main strong { color: var(--ls-fg); }
+
+/* Rechtstexte: Karten + Texte */
+.imp-toc, .highlight-box, .contact-card { background: var(--ls-surface) !important; border-color: var(--lgrey) !important; box-shadow: none; }
+.highlight-box { border-left-color: var(--petrol) !important; }
+.imp-section p, .imp-section ul li, .imp-toc li, .contact-value { color: var(--ls-muted) !important; }
+.imp-section strong, .imp-section h2, .imp-section h3 { color: var(--ls-fg) !important; }
+.imp-toc a, .imp-section a, .contact-value a { color: var(--petrol); }
+
+/* ---------- Mobil ---------- */
+@media (max-width: 640px) {
+  .grey, p { color: var(--ls-muted); }
+  .warum-center p, .week-text, .ueber-text p, .kurs-check, .price-include, details p,
+  .hero-benefit, .furwen-statement-text { color: var(--ls-fg) !important; opacity: .9; }
+  .btn { font-size: 16px; padding: 16px 28px; }
+}

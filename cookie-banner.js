@@ -7,12 +7,12 @@
 (function () {
   'use strict';
 
-  const PETROL    = '#006D7A';
-  const PETROL_H  = '#005C67';
-  const NAVY      = '#050C12';
-  const OFF_WHITE = '#F8F8F6';
-  const LGREY     = '#E4E0DC';
-  const GREY      = '#6B737A';
+  const PETROL    = '#43B8C1';
+  const PETROL_H  = '#6BCBD2';
+  const NAVY      = '#E7EEEB';
+  const OFF_WHITE = '#10272B';
+  const LGREY     = '#23403F';
+  const GREY      = '#93A8A6';
   const RH        = "'Raleway', sans-serif";
   const RB        = "'Nunito Sans', sans-serif";
 
